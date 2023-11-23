@@ -1,3 +1,6 @@
+### Note
+    Utamakan baca ya, terima kasih..
+
 ### Cara Install Di Termux
     pkg update && upgrade
     pkg install tur-repo -y
