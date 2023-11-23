@@ -2,13 +2,11 @@
 # -*- coding: utf-8
 
 try:
-    from asset import Prem_enc as Yxz
+    from asset import run as xyz
 except Exception as Error:
     exit('\nErorr Module Or File: {}'.format(Error))
 
 try:
-    _ = Yxz()
-    _.AssetAndKey()
+    xyz.AssetAndKey()
 except Exception as Error:
     exit('\nErorr Running: {}'.format(Error))
-
