@@ -9,4 +9,5 @@
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
     python3.9 run.py
-    
+### Ss result
+![OK RESULTS](https://github.com/khamdihi-dev/Prem/blob/main/img/Screenshot_2023-11-23-17-32-29-97.png)
