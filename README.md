@@ -4,7 +4,7 @@
     pkg install git
     pkg install clang libffi openssl libsodium binutils
     pkg install python3.9
-    pip install requests bs4 rich
+    pip3.9 install requests bs4 rich
     rm -rf Prem
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
