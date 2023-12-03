@@ -2,7 +2,7 @@
 # -*- coding: utf-8
 
 try:
-    from asset import run as xyz
+    from asset import ExecInstagram as xyz
 except Exception as Error:
     exit('\nErorr Module Or File: {}'.format(Error))
 
