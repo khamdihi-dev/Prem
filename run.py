@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8
 
-try:
-    from asset import ExecInstagram as xyz
-except Exception as Error:
-    exit('\nErorr Module Or File: {}'.format(Error))
+print('\n [!] Script Sedang Di Update Silakan Tunggu ')
+print(' [!] Atau Hubungi: 085729416714')
+exit(1)
 
-try:
-    xyz.AssetAndKey()
-except Exception as Error:
-    exit('\nErorr Running: {}'.format(Error))
