@@ -4,7 +4,7 @@
 ### Cara Install
     pkg update && upgrade
     pkg install git
-    pip3 install requests bs4 rich
+    pip3 install requests bs4
     rm -rf Prem
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
