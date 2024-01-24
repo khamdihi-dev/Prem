@@ -1,7 +1,7 @@
-### Note
-    Utamakan baca ya, terima kasih..
+<p align="center"><i><b>Selamat datang </i></b></p>
+<img src="https://gifdb.com/images/high/glitching-hacker-hub-biwszmcveudzaori.gif" width="300"/>
 
-### Cara Install Di Termux
+### Cara Install
     pkg update && upgrade
     pkg install git
     pip3 install requests bs4 rich
@@ -9,7 +9,4 @@
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
     python3 main.py
-### INSTAGRAM RESULTS
-![OK RESULTS](https://github.com/khamdihi-dev/Prem/blob/main/img/Screenshot_2023-11-23-17-32-29-97.png)
-### FACEBOOK RESULTS
-![OK RESULTS](https://github.com/khamdihi-dev/Prem/blob/main/img/Screenshot_2023-12-21-01-59-12-35.png)
+
