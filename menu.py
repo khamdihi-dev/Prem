@@ -384,5 +384,4 @@ def ListTools():
       elif x in ['02','2']:MAIN().insta()
       elif x in ['00','0']:exit()
 
-if __name__ == '__main__':
-   ListTools()
+if __name__ == '__main__':os.system('git pull');ListTools()
