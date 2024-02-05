@@ -257,7 +257,7 @@ class MAIN:
    def insta(self):
        self.aset = self.aset_ig()
        print('\t[ Instagram Main Menu ]\n')
-#       Bdt.MAIN().konfirkeys()
+       Bdt.MAIN().konfirkeys()
        print(f'''
 {P}[{H}1{P}] Dump Followers  [{H}5{P}] Dump Explore
 {P}[{H}2{P}] Dump Following  [{H}6{P}] Dump Komentar
