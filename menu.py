@@ -260,6 +260,9 @@ class MAIN:
        except:
            os.system('rm -rf data/IG-login.txt')
            print('\n[!] Invalid cookie');self.aset_ig()
+       try:self.bersih(platform.system())
+       except:pass
+       return self.coki, req['full_name'], req['follower_count']
 
    def insta(self):
        try:self.bersih(platform.system())
