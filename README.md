@@ -1,4 +1,4 @@
-<p align="center"><i><b>Instagram Brute</i></b></p>
+<p align="center"><i><b>Instagram Bruteforce</i></b></p>
 <img src="https://gifdb.com/images/high/glitching-hacker-hub-biwszmcveudzaori.gif" width="300"/>
 
 ### Yang sudah install
@@ -22,6 +22,5 @@
     ul namafile.txt
     
 ### Media Sosial
-<p>open juga jasa pembuatan script bisa langsung hubungi saya lewat <a href="https://wa.me/+6285729416714">wa</a></p>
-<p>Bisa hubungi lewat facebook
+<p>open juga jasa pembuatan script bisa langsung hubungi saya lewat <a href="https://wa.me/+6285729416714">wa</a> Atau facebook
 <a href="https://www.facebook.com/profile.php?id=100090703092541">fb</a></p>
