@@ -605,7 +605,7 @@ class MAIN:
    def ToolsType(self):
        print('\n')
        print(f'{P}[{H}1{P}] Method New (v new)')
-       print(f'{P}[{H}1{P}] Method Old (v old)\n')
+       print(f'{P}[{H}2{P}] Method Old (v old)\n')
        while True:
          x = input(f'{P}[{H}?{P}] Pilih : ')
          if x in ('01','1'):Bdt.MAIN().List(self.pk_idg)
