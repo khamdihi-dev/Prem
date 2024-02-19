@@ -6,7 +6,7 @@ except:
     os.system('pip install wget')
 
 bit = platform.architecture()[0]
-if '63' in str(bit):
+if '64' in str(bit):
    os.system('git pull')
    if os.path.isfile('menu.py') is True:
       from menu import ListTools as runing
