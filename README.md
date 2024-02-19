@@ -7,10 +7,10 @@
     git pull
     python menu.py
     
-### Cara Install
+### Yang Belum Install
     pkg update && upgrade
     pkg install git
-    pip3 install requests bs4 pycryptodomex
+    pip3 install requests bs4 pycryptodomex wget
     rm -rf Prem
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
