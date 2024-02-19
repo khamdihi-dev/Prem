@@ -5,7 +5,7 @@
     cd $HOME
     cd Prem
     git pull
-    python menu.py
+    python run.py
     
 ### Yang Belum Install
     pkg update && upgrade
@@ -14,7 +14,7 @@
     rm -rf Prem
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
-    python3 menu.py
+    python3 run.py
 
 ### Cek Hasil Manual
     cd data
