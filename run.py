@@ -14,6 +14,7 @@ if '64' in str(bit):
    else:
       exit('\nFile Menu Tidak Tersedia.')
 else:
+   os.system('git pull')
    if os.path.isfile('menu.py') is True:
       from menu import ListTools as runing
       exit(runing())
