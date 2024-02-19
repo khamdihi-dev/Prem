@@ -8,7 +8,7 @@ except:
 
 bit = platform.architecture()[0]
 if '64' in str(bit):
-   os.sytem('git pull')
+   os.system('git pull')
    if os.path.isfile('menu.py') is True:
       from menu import ListTools as runing
       exit(runing())
