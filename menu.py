@@ -269,10 +269,9 @@ class MAIN:
        except:pass
        self.aset,self.nama,self.fol = self.aset_ig()
        self.Me()
-       print(f' {P}• {H}Users Information{P}')
+       print(f' {P}• {H}Users Information{P}\n')
        Bdt.MAIN().konfirkeys()
-       print(f'''
-       
+       print(f'''       
 [{H}>{P}] Nama      : {H}{self.nama}{P}
 [{H}>{P}] Followers : {H}{self.fol}
 
