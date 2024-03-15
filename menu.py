@@ -8,17 +8,18 @@ Menu Premium.
 Code By Khamdihi Dev - Purbalingga
 """
 xx, un = 0, []
-import urllib.parse
+Warning = '\n\n [!] Jangan Edit Apapun Agar Script Berjalan Dengan Semestinya, terima kasih'
 
 try:
-    import os, re, time, sys
-    import requests, platform
+    import requests, platform, os, re, time, sys, pytz
     from bs4 import BeautifulSoup as bsp
-except Exception as e:
-    print(f'[!] Kesalahan Module : {e}')
-    x = urllib.parse.quote_plus(f'Error type : {e}')
-    os.system(f'xdg-open https://wa.me/+6285729416714?text={x}')
-    exit(1)
+    from concurrent.futures import ThreadPoolExecutor
+    from Cryptodome.Cipher import AES, PKCS1_v1_5
+    from Cryptodome.PublicKey import RSA
+    from Cryptodome.Random import get_random_bytes
+except Exception:
+    print('\n\t [ Menginstall Module Harap Tunggu ]\n')
+    os.system('pip install -r modul.txt')
 
 try:
     from dump import Group as Grp, Friends as MyFriends
@@ -26,10 +27,7 @@ try:
     from method import ibrut_new as Bdt
     from method import ibrut_old as Bdt_old
 except Exception as e:
-    print(f'[!] Kesalahan. Files Tidak Ada : {e}')
-    x = urllib.parse.quote_plus(f'Error type : {e}')
-    os.system(f'xdg-open https://wa.me/+6285729416714?text={x}')
-    exit(1)
+    exit(Warning)
 
 P = "\033[97m"
 I = "\033[30m"
@@ -38,11 +36,17 @@ H = "\033[32m"
 K = "\033[33m"
 M, K2 = K, K
 
+if os.path.isfile('color.py') is True:
+   import color
+   H = color.khamdihi
+else:print(f'{P}[{H}!{P}] Anda Menggunakan Theme Default');time.sleep(2)
+
 class MAIN:
 
    bersih = lambda xyz, plt: os.system('clear' if plt.lower() == 'linux' else 'cls')
    userid = []
    pk_idg = []
+
    def __init__(self):
        try:self.bersih(platform.system())
        except:pass
@@ -52,7 +56,7 @@ class MAIN:
        print(r''' %s_____  _____  _____  _____
 /  ___>/     \/  _  \|  _  \  %screate by
 |___  ||  |--||  _  <|  |  |  %skhamdihi dev%s
-<_____/\_____/\_____/|_____/  %ssimpel bruteforce %sv3.0%s
+<_____/\_____/\_____/|_____/  %ssimpel bruteforce %sv4.0%s
        '''%(P,P,H,P,P,H,P))
 
    def aset(self):
@@ -262,6 +266,8 @@ class MAIN:
        except:
            os.system('rm -rf data/IG-login.txt')
            print('\n[!] Invalid cookie');self.aset_ig()
+       try:self.bersih(platform.system())
+       except:pass
        return self.coki, req['full_name'], req['follower_count']
 
    def insta(self):
@@ -269,9 +275,9 @@ class MAIN:
        except:pass
        self.aset,self.nama,self.fol = self.aset_ig()
        self.Me()
-       print(f' {P}• {H}Users Information{P}\n')
-       Bdt.MAIN().konfirkeys()
-       print(f'''       
+       print(f' {P}• {H}Users Information{P}')
+#       Bdt.MAIN().konfirkeys()
+       print(f'''
 [{H}>{P}] Nama      : {H}{self.nama}{P}
 [{H}>{P}] Followers : {H}{self.fol}
 
@@ -279,7 +285,7 @@ class MAIN:
 {P}[{H}2{P}] Dump Following    [{H}6{P}] Dump Komentar
 {P}[{H}3{P}] Chek Checkpoin    [{H}7{P}] Dump Unlimited
 {P}[{H}4{P}] Chek Results      [{H}8{P}] Dump Hastag
-{P}[{H}U{P}] Save Hasil {H}sdcard{P} [{H}9{P}] Log, Out\n''')
+{P}[{H}U{P}] Save Hasil {H}sdcard{P} [{H}9{P}] Log, Out & Theme\n''')
        self.chs(self.aset)
 
    def chs(self, assets):
@@ -298,8 +304,45 @@ class MAIN:
          elif x in ['07','7']:self.Unli(assets)
          elif x in ['08','8']:self.hash(assets)
          elif x in ['u','U' ]:self.save_sd()
-         elif x in ['09','9']:os.system('rm -rf data/IG-login.txt');exit()
+         elif x in ['09','9']:self.theme()
          else: continue
+
+   def theme(self):
+       print(f'\n{P}[{H}1{P}] Ubah Tema Warna Pada Menu Ini')
+       print(f'{P}[{H}2{P}] Log, Out\n')
+       x = input(f'[{H}?{P}] Pilih : ')
+       if x in ['01','1']:
+          TP = '\x1b[1;97m'
+          TM = '\x1b[1;91m'
+          TH = '\x1b[1;92m'
+          TK = '\x1b[1;93m'
+          TB = '\x1b[1;94m'
+          TU = '\x1b[1;95m'
+          TO = '\x1b[1;96m'
+          TN = '\x1b[0m'
+          print(f'''
+ [ {H}MENU {P}]          [ {H}Hasil Warna {P}]
+
+[{H}1{P}] Hijau           {TH}Khamdihi Dev{TN}
+[{H}2{P}] Biru Muda       {TO}Khamdihi Dev{TN}
+[{H}3{P}] Putih           {TP}Khamdihi Dev{TN}
+[{H}4{P}] Merah           {TM}Khamdihi Dev{TN}
+[{H}5{P}] Ungu            {TU}Khamdihi Dev{TN}
+[{H}6{P}] Polos           {TN}Khamdihi Dev{TN}
+[{H}7{P}] Kuning          {TK}Khamdihi Dev{TN}\n  ''')
+          while True:
+            color = input(f'[{H}?{P}] Pilih : ')
+            if color in ['1','01']:open('color.py','w').write("khamdihi = '\x1b[1;92m'")
+            elif color in ['2','02']:open('color.py','w').write("khamdihi = '\x1b[1;96m'")
+            elif color in ['3','03']:open('color.py','w').write("khamdihi = '\x1b[1;97m'")
+            elif color in ['4','04']:open('color.py','w').write("khamdihi = '\x1b[1;91m'")
+            elif color in ['5','05']:open('color.py','w').write("khamdihi = '\x1b[1;95m'")
+            elif color in ['6','06']:open('color.py','w').write("khamdihi = '\x1b[0m'")
+            else:open('color.py','w').write("khamdihi = '\x1b[1;93m'")
+            print(f'\n{P}[{H}✓{P}] Berhasil Mengubah Theme');time.sleep(2)
+            os.system(f'python {sys.argv[0]}')
+
+       else:os.system('rm -rf data/IG-login.txt');exit()
 
    def save_sd(self, col = []):
        try:
@@ -386,6 +429,14 @@ class MAIN:
        except:pass
 
    def Unli(self, cokie):
+       if 'csrftoken' not in str(cokie['cookie']):
+          try:
+              self.memek = requests.get('https://www.instagram.com/data/shared_data/', cookies = cokie).json()
+              self.token = self.memek['config']['csrf_token']
+              cokie['cookie'] +=';csrftoken=%s;'%(self.token)
+          except Exception as e:
+              os.system('rm -rf data/IG-login.txt')
+              exit(f'\n{P}[{K}!{P}] Csrftoken tidak tersedia, dump tidak akan berjalan: {e}')
        print(f'\n[{H}?{P}] Masukan username, Cukup Ambil 20-50 ID!')
        self.user = input(f'[{H}?{P}] Username : ')
        try:
@@ -511,7 +562,7 @@ class MAIN:
        self.ToolsType()
 
    def dumps(self, cintil, typess, xyz = []):
-       if 'csrftoken' not in str(cintil):
+       if 'csrftoken' not in str(cintil['cookie']):
           try:
               self.memek = requests.get('https://www.instagram.com/data/shared_data/', cookies = cintil).json()
               self.token = self.memek['config']['csrf_token']
@@ -639,8 +690,8 @@ class MAIN:
        except:pass
    def ToolsType(self):
        print('\n')
-       print(f'{P}[{H}1{P}] Method New {K}• Lambat')
-       print(f'{P}[{H}2{P}] Method Old {H}• Recomend\n')
+       print(f'{P}[{H}1{P}] Versi New {K}• Lambat - no update')
+       print(f'{P}[{H}2{P}] Versi Old {H}• Recomend - di update\n')
        while True:
          x = input(f'{P}[{H}?{P}] Pilih : ')
          if x in ('01','1'):Bdt.MAIN().List(self.pk_idg)
