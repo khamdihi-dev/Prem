@@ -1,0 +1,4 @@
+pytz
+pycryptodomex
+bs4
+requests
