@@ -1,11 +1,4 @@
-import os
-
-try:
-    import platform, wget
-except:
-    os.system('pip install wget')
-
-os.system('git pull')
+import os,platform
 bit = platform.architecture()[0]
 if '64' in str(bit):
    if os.path.isfile('menu.py') is True:
@@ -18,4 +11,4 @@ else:
       from menu import ListTools as runing
       exit(runing())
    else:
-      exit('\nHubungi Author, Device Anda Tidak Support')
+      exit('\nGk support cuy atau file kepisah.')

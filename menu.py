@@ -4,7 +4,7 @@
 """
 - META 2024 -
 
-Menu Premium.
+Menu Premium
 Code By Khamdihi Dev - Purbalingga
 """
 xx, un = 0, []
@@ -24,7 +24,6 @@ except Exception:
 try:
     from dump import Group as Grp, Friends as MyFriends
     from method import main as Crm
-    from method import ibrut_new as Bdt
     from method import ibrut_old as Bdt_old
 except Exception as e:
     exit(Warning)
@@ -56,7 +55,7 @@ class MAIN:
        print(r''' %s_____  _____  _____  _____
 /  ___>/     \/  _  \|  _  \  %screate by
 |___  ||  |--||  _  <|  |  |  %skhamdihi dev%s
-<_____/\_____/\_____/|_____/  %ssimpel bruteforce %sv4.0%s
+<_____/\_____/\_____/|_____/  %ssimpel bruteforce %sv5.0%s
        '''%(P,P,H,P,P,H,P))
 
    def aset(self):
@@ -276,7 +275,7 @@ class MAIN:
        self.aset,self.nama,self.fol = self.aset_ig()
        self.Me()
        print(f' {P}• {H}Users Information{P}')
-       Bdt.MAIN().konfirkeys()
+#       Bdt.MAIN().konfirkeys()
        print(f'''
 [{H}>{P}] Nama      : {H}{self.nama}{P}
 [{H}>{P}] Followers : {H}{self.fol}
@@ -553,7 +552,15 @@ class MAIN:
 
    def Ulang(self):
        try:
-          for rest in open('data//CP-Instagram.txt','r').read().splitlines():
+          dirs = os.listdir('data')
+          if len(dirs) == 0:exit(f'\n{P}[{M}!{P}] File Tidak Ada')
+          print('')
+          for angka,asu in enumerate(dirs, start=1):
+              if 'CP' not in str(asu):pass
+              else:print(f' {P}[{H}*{P}] {asu}')
+          print(f'\n[{H}!{P}] Masukan Nama file. Jangan Angkanya')
+          file = input(f'[{H}?{P}] Nama file : ')
+          for rest in open(f'data/{file}','r').read().splitlines():
               uid, pas = rest.split('|')[0], rest.split('|')[1]
               self.pk_idg.append(f'{uid}|{pas}')
               print(f'\r[+] Berhasil dump {len(self.pk_idg)}',end=' ')
@@ -688,21 +695,16 @@ class MAIN:
                if 'Lihat Hasil Selanjutnya' in r.text:
                    self.SearchName(r.get('href'),coki)
        except:pass
+
    def ToolsType(self):
-       print('\n')
-       print(f'{P}[{H}1{P}] Versi New {K}• Lambat - no update')
-       print(f'{P}[{H}2{P}] Versi Old {H}• Recomend - di update\n')
-       while True:
-         x = input(f'{P}[{H}?{P}] Pilih : ')
-         if x in ('01','1'):Bdt.MAIN().List(self.pk_idg)
-         else:Bdt_old.MAIN().List(self.pk_idg)
+       exit(Bdt_old.MAIN().List(self.pk_idg))
 
 def ListTools():
     try:MAIN().bersih(platform.system())
     except:pass
     MAIN().Me()
-    print(f'{P}[{H}1{P}] Facebook  : {K2}Free{P}')
-    print(f'[{H}2{P}] Instagram : {H}Prem{P}')
+    print(f'{P}[{H}1{P}] Crack Facebook  : {K2}Free{P}')
+    print(f'[{H}2{P}] Crack Instagram : {H}Prem{P}')
     print(f'[{K}0{P}] Exit\n')
     while True:
       x = input(f'[{H}?{P}] Pilih : ')
