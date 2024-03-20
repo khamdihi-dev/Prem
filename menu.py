@@ -275,7 +275,7 @@ class MAIN:
        self.aset,self.nama,self.fol = self.aset_ig()
        self.Me()
        print(f' {P}• {H}Users Information{P}')
-#       Bdt.MAIN().konfirkeys()
+       Bdt.MAIN().konfirkeys()
        print(f'''
 [{H}>{P}] Nama      : {H}{self.nama}{P}
 [{H}>{P}] Followers : {H}{self.fol}
