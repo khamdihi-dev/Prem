@@ -25,6 +25,7 @@ try:
     from dump import Group as Grp, Friends as MyFriends
     from method import main as Crm
     from method import ibrut_old as Bdt_old
+    from method import ApiKey
 except Exception as e:
     exit(Warning)
 
@@ -274,8 +275,8 @@ class MAIN:
        except:pass
        self.aset,self.nama,self.fol = self.aset_ig()
        self.Me()
-       print(f' {P}• {H}Users Information{P}')
-       Bdt.MAIN().konfirkeys()
+       print(f' {P}• {H}Users Information{P}\n')
+       ApiKey.UserKey().konfirkeys()
        print(f'''
 [{H}>{P}] Nama      : {H}{self.nama}{P}
 [{H}>{P}] Followers : {H}{self.fol}

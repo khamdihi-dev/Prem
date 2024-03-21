@@ -1,6 +1,5 @@
 import os,platform
 bit = platform.architecture()[0]
-exit('Ada sedikit kesalahan, tunggu author konfirmasi ')
 if '64' in str(bit):
    if os.path.isfile('menu.py') is True:
       from menu import ListTools as runing
