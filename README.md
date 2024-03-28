@@ -9,13 +9,16 @@
   </p>
 </div>
 
-### Yang sudah install
+### if you have installed
+   ```
     cd $HOME
     cd Prem
     git pull
     python run.py
+  ```
     
-### Yang Belum Install
+### If you haven't installed yet
+   ```
     pkg update && upgrade
     pkg install git
     pip3 install requests bs4 pycryptodomex wget
@@ -23,12 +26,5 @@
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
     python3 run.py
+   ```
 
-### Cek Hasil Manual
-    cd data
-    ls
-    ul namafile.txt
-    
-### Media Sosial
-<p>open juga jasa pembuatan script bisa langsung hubungi saya lewat <a href="https://wa.me/+6285729416714">wa</a> Atau facebook
-<a href="https://www.facebook.com/profile.php?id=100090703092541">fb</a></p>
