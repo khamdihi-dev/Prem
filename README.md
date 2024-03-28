@@ -29,8 +29,10 @@
    ```
 
 ### downloads termux
-<p>
+<div>
+  <p>
   If you don't have the Termux app yet I recommend downloading it at the following link <a href="https://f-droid.org/packages/com.termux/">click here</a>
   and select according to your needs, I recommend downloading version 118
 </p>
+</div>
 
