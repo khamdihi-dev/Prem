@@ -1,5 +1,13 @@
 <p align="center"><i><b>Instagram Bruteforce</i></b></p>
-<img src="https://gifdb.com/images/high/glitching-hacker-hub-biwszmcveudzaori.gif" width="300"/>
+<p align="center"><img src="https://gifdb.com/images/high/glitching-hacker-hub-biwszmcveudzaori.gif" width="300"/></p>
+<div align="center">
+  <p>
+    <img src="https://img.shields.io/badge/Author-KhamdihiDev-green?style=flat-square">
+    <img src="https://img.shields.io/badge/Written%20In-Python-green?style=flat-square">
+    <img src="https://img.shields.io/badge/Open%20Source-No-yellow?style=flat-square">
+    <img src="https://img.shields.io/badge/Premium-Ya-green?style=flat-square">
+  </p>
+</div>
 
 ### Yang sudah install
     cd $HOME
