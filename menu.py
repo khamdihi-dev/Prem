@@ -56,8 +56,10 @@ class MAIN:
        print(r''' %s_____  _____  _____  _____
 /  ___>/     \/  _  \|  _  \  %screate by
 |___  ||  |--||  _  <|  |  |  %skhamdihi dev%s
-<_____/\_____/\_____/|_____/  %ssimpel bruteforce %sv5.0%s
-       '''%(P,P,H,P,P,H,P))
+<_____/\_____/\_____/|_____/  %ssimpel bruteforce %sv6.0%s
+
+[%s*%s] Source : %shttps://github.com/khamdihi-dev/Prem.git%s
+       '''%(P,P,H,P,P,H,P,H,P,H,P))
 
    def aset(self):
        if os.path.isfile('data/login.txt') is True:
