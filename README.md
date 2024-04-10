@@ -27,7 +27,8 @@
     pip3 instal -r modul.txt
     python3 menu.py
    ```
-
+### note
+To stop the dump process so as not to error, turn off data or wifi until it stops itself
 ### downloads termux
 <div>
   <p>
