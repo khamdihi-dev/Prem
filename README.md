@@ -14,18 +14,18 @@
     cd $HOME
     cd Prem
     git pull
-    python run.py
+    python menu.py
   ```
     
 ### If you haven't installed yet
    ```
     pkg update && upgrade
     pkg install git
-    pip3 install requests bs4 pycryptodomex wget
     rm -rf Prem
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
-    python3 run.py
+    pip3 instal -r modul.txt
+    python3 menu.py
    ```
 
 ### downloads termux
