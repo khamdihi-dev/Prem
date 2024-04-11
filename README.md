@@ -20,13 +20,13 @@
 ### If you haven't installed yet
    ```
     pkg update && upgrade
-    pkg install git
+    pkg install git python
     rm -rf Prem
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
-    pip3 instal -r modul.txt
-    python3 menu.py
-   ```
+    chmod +x setup.sh menu.py
+    ./setup.sh && ./menu.py
+  ```
 ### note
 To stop the dump process so as not to error, turn off data or wifi until it stops itself
 
