@@ -20,7 +20,7 @@
 ### If you haven't installed yet
    ```
     pkg update && upgrade
-    pkg install git tur-repo libffi openssl libsodium binutils
+    pkg install git tur-repo libffi openssl libsodium binutils iproute2
     pkg install python3.9
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
