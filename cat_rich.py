@@ -1,0 +1,1 @@
+khamdihi = 'color(7)'
