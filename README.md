@@ -29,7 +29,7 @@
   ```
 ### Note
 Gunakan alat ini dengan bijak admin tidak akan bertanggung jawab jika suatu saat nanti terjadi hal-hal yang tidak di inginkan.
-Dengan menginstall alat ini maka kamu mensetuji apa yang saya berikan!
+Dengan menginstall alat ini maka kamu mensetujui apa yang saya berikan!
 
 ### Menu
 1. Dump dari followers
