@@ -14,18 +14,17 @@
     cd $HOME
     cd Prem
     git pull
-    python3.9 menu.py
+    python menu.py
   ```
     
 ### If you haven't installed yet
    ```
     pkg update && upgrade
-    pkg install git tur-repo libffi openssl libsodium binutils iproute2
-    pkg install python3.9
+    pkg install git python
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
     chmod +x setup.sh
-    ./setup.sh && python3.9 menu.py
+    ./setup.sh && python menu.py
   ```
 ### Note
 Gunakan alat ini dengan bijak admin tidak akan bertanggung jawab jika suatu saat nanti terjadi hal-hal yang tidak di inginkan.
