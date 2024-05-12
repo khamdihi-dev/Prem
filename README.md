@@ -47,7 +47,7 @@ Dengan menginstall alat ini maka kamu mensetujui apa yang saya berikan!
 ### termux & contack
 <div>
   <p>
-  <a href="https://f-droid.org/repo/com.termux_118.apk">Download Termux</a>
+  <a href="https://f-droid.org/repo/com.termux_118.apk">Download Termux</a><br>
   <a href="https://wa.me/+6283853140469">Contack</a>
 </p>
 </div>
