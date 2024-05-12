@@ -11,20 +11,20 @@
 
 ### if you have installed
    ```
-    cd $HOME
-    cd Prem
-    git pull
-    python menu.py
+    >> cd $HOME
+    >> cd Prem
+    >> git pull
+    >> python menu.py
   ```
     
 ### If you haven't installed yet
    ```
-    pkg update && upgrade
-    pkg install git python
-    git clone https://github.com/khamdihi-dev/Prem
-    cd Prem
-    chmod +x setup.sh
-    ./setup.sh && python menu.py
+    >> pkg update && upgrade
+    >> pkg install git python
+    >> git clone https://github.com/khamdihi-dev/Prem
+    >> cd Prem
+    >> chmod +x setup.sh
+    >> ./setup.sh && python menu.py
   ```
 ### Note
 Gunakan alat ini dengan bijak admin tidak akan bertanggung jawab jika suatu saat nanti terjadi hal-hal yang tidak di inginkan.
