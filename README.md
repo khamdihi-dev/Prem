@@ -14,17 +14,20 @@
     >> cd $HOME
     >> cd Prem
     >> git pull
-    >> python menu.py
+    >> python3.9 menu.py
   ```
     
 ### If you haven't installed yet
    ```
     >> pkg update && upgrade
-    >> pkg install git python
+    >> pkg update 
+    >> pkg install tur-repo -y 
+    >> pkg install python3.9
+    >> pip3.9 install pip --upgrade
+    >> pip3.9 install rich pytz bs4 pycryptodomex
     >> git clone https://github.com/khamdihi-dev/Prem
     >> cd Prem
-    >> chmod +x setup.sh
-    >> ./setup.sh && python menu.py
+    >> python3.9 menu.py
   ```
 ### Note
 Gunakan alat ini dengan bijak admin tidak akan bertanggung jawab jika suatu saat nanti terjadi hal-hal yang tidak di inginkan.
