@@ -20,7 +20,6 @@
 ### If you haven't installed yet
    ```
     >> pkg update && upgrade
-    >> pkg update 
     >> pkg install tur-repo -y 
     >> pkg install python3.9
     >> pip3.9 install pip --upgrade
