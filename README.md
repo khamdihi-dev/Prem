@@ -51,7 +51,7 @@ Dengan menginstall alat ini maka kamu mensetujui apa yang saya berikan!
 ### termux & contack
 <div>
   <p>
-    Downloads aplikasi <a href="https://f-droid.org/repo/com.termux_118.apk">termux</a> di sini agar tidak terjadi kesalahan saat penginstallan, anda bisa menghubungi saya melalui <a href="https://web.facebook.com/khamdihi.085729416714">facebook</a> atau <a href="https://wa.me/+6283853140469">whatsApp</a> hindari akun facebook atau whatsApp face! ikuti tautan yang saya berikan di setiap repo.
+    Downloads aplikasi <a href="https://f-droid.org/repo/com.termux_118.apk">termux</a> di sini agar tidak terjadi kesalahan saat penginstallan, anda bisa menghubungi saya melalui <a href="https://web.facebook.com/dWxmYWgu">facebook</a> atau <a href="https://wa.me/+6283853140469">whatsApp</a> hindari akun facebook atau whatsApp face! ikuti tautan yang saya berikan di setiap repo.
 </p>
 </div>
 
