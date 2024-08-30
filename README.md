@@ -44,9 +44,8 @@ Dengan menginstall alat ini maka kamu mensetujui apa yang saya berikan!
     >> Crack akun facebook (Belum Jadi)
     >> Cari akun menggunakan email (Sistem HB)
 
-Menu screenshot di sini!
-<a href="https://scontent.fcgk3-3.fna.fbcdn.net/v/t39.30808-6/439416624_365202523179848_8501028985303288205_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeExIZuNb-UQ9LX60EoUtpd3gBjCRsYFJEuAGMJGxgUkS4o6sEj1a2zRD1D2v8V6ihUV8dVffBv1iyySl1pFLqvg&_nc_ohc=gwWgytZglQYQ7kNvgELENNq&_nc_zt=23&_nc_ht=scontent.fcgk3-3.fna&oh=00_AfB69XrG2jAm4do5n9AwUsNARe1r9aGcWIkNTrT08Au1qA&oe=66418275">Lihat Foto</a>
-
+### open source 
+   dapatkan semua file dari khamdihi dev dengan membeli open source 💫🤩
 ### termux & contack
 <div>
   <p>
