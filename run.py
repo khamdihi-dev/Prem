@@ -10,4 +10,4 @@ def auth(files = None):
         call= getattr(module, 'KhamdihiDev')
         call()
 
-auth('menu.bin')
+auth('code/menu.bin')
