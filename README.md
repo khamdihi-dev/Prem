@@ -46,7 +46,7 @@ Dengan menginstall alat ini maka kamu mensetujui apa yang saya berikan!
 
 ### open source 
    dapatkan semua file dari khamdihi dev dengan membeli open source💫🤩<br><br>
-   hanya dengan 300k yang kamu belanjakan kamu mendapatkan semua file dan berhak mendapatkan 3x update, 500k kamu akan mendapatkan update terus menerus dari khamdihi dev
+   hanya dengan 500k yang kamu belanjakan kamu mendapatkan semua file dan berhak mendapatkan 3x update, 1jt kamu akan mendapatkan update terus menerus dari khamdihi dev + requests 1 menu
    <img src="https://raw.githubusercontent.com/khamdihi-dev/Prem/main/img/20240830_165209.jpg"/>
 ### termux & contack
 <div>
