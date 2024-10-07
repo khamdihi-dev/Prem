@@ -14,7 +14,7 @@
     cd $HOME
     cd Prem
     git pull
-    python3.11 menu.py
+    python3.11 run.py
   ```
     
 ### If you haven't installed yet
