@@ -23,6 +23,7 @@
     pkg install tur-repo -y 
     pkg install python3
     pip3.11 install pip --upgrade
+    pip3.11 install faker
     pip3.11 install rich pytz bs4 pycryptodomex ibrut_user_agent --upgrade
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
