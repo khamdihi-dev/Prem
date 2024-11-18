@@ -14,7 +14,7 @@
     cd $HOME
     cd Prem
     git pull
-    python3.11 run.py
+    python3.11 menu.py
   ```
     
 ### If you haven't installed yet
@@ -23,33 +23,16 @@
     pkg install tur-repo -y 
     pkg install python3
     pip3.11 install pip --upgrade
-    pip3.11 install faker
-    pip3.11 install rich pytz bs4 pycryptodomex ibrut_user_agent --upgrade
+    pip3.11 install pytz bs4 requests
     git clone https://github.com/khamdihi-dev/Prem
     cd Prem
-    python3.11 run.py
+    python3.11 menu.py
   ```
 ### Note
 Gunakan alat ini dengan bijak admin tidak akan bertanggung jawab jika suatu saat nanti terjadi hal-hal yang tidak di inginkan.
 Dengan menginstall alat ini maka kamu mensetujui apa yang saya berikan!
 
-### Menu
-    Dump dari followers
-    Dump dari following
-    Crack ulang akun checkpoint
-    Cek hasil crack
-    simpan hasil ke sdcard otomatis
-    Dump dari komentar
-    Dump followers unlimited
-    Ganti tema
-    Crack akun facebook (Belum Jadi)
-    Cari akun menggunakan email (Sistem HB)
 
-### open source 
-   dapatkan semua file dari khamdihi dev dengan membeli open source💫🤩<br><br>
-   hanya dengan 500k yang kamu belanjakan kamu mendapatkan semua file dan berhak mendapatkan 3x update, 1jt kamu akan mendapatkan update terus menerus dari khamdihi dev + requests 1 menu
-   
-   <img src="https://raw.githubusercontent.com/khamdihi-dev/Prem/main/img/20240830_165209.jpg"/>
 ### termux & contack
 <div>
   <p>
