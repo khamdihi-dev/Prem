@@ -14,10 +14,7 @@ try:
     import requests, platform, os, re, time, sys, pytz
     from bs4 import BeautifulSoup as bsp
     from concurrent.futures import ThreadPoolExecutor
-    from Cryptodome.Cipher import AES, PKCS1_v1_5
-    from Cryptodome.PublicKey import RSA
-    from Cryptodome.Random import get_random_bytes
-except Exception:
+except Exception as e:
     exit(e)
 try:
     from method import ibrut_old as Bdt_old
