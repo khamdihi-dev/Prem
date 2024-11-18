@@ -10,4 +10,6 @@ def auth(files = None):
         call= getattr(module, 'KhamdihiDev')
         call()
 
-auth('code/menu.bin')
+# auth('code/menu.bin')
+print('\n[+] Dalam perbaikan, hubungi author atau tunggu malem nanti, terima kasih')
+exit()
