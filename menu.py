@@ -698,6 +698,8 @@ class MAIN:
 def ListTools():
     try:MAIN().bersih(platform.system())
     except:pass
+    print('[+] HI, Untuk beberapa hari ke depan harga open source hanya 250')
+    time.sleep(4)
     MAIN().insta()
 
 ListTools()
