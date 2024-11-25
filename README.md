@@ -22,7 +22,6 @@
 - Tampilan antarmuka yang simpel namun elegan.
 - Panduan instalasi step-by-step untuk pemula.
 - List method baru:
-
   - api threads
   - api async action
   - api google smartlock
