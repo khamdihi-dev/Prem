@@ -4,7 +4,7 @@
 
 import random
 
-radio_type = 'wifi'
+radio_type = 'lte'
 app_version = '358.0.0.51.97'
 app_version_code = '665037493'
 app_useragent = None
