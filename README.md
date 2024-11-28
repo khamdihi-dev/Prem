@@ -15,6 +15,8 @@
 
 <p align="center">
   <i>Alat ini mendukung semua versi Python3.x dengan tampilan klasik dan dilengkapi panduan instalasi yang mudah!</i>
+  <br>
+  <i>Membeli licensi atau file ini kepada orang lain jika terjadi kesalahan dalam alat ini saya tidak bertanggung jawab!.</i>
 </p>
 
 ## ✨ **Update Terbaru**
