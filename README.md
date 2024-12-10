@@ -8,25 +8,26 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/Author-KhamdihiDev-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Written%20In-Python3.x-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Written%20In-Python3.12.x-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Open%20Source-No-yellow?style=for-the-badge">
   <img src="https://img.shields.io/badge/Premium-Yes-red?style=for-the-badge">
 </div>
 
 <p align="center">
-  <i>Alat ini mendukung semua versi Python3.x dengan tampilan klasik dan dilengkapi panduan instalasi yang mudah!</i>
+  <i>Alat ini mendukung semua versi Python3.12.x dengan tampilan klasik dan dilengkapi panduan instalasi yang mudah!</i>
   <br>
   <i>Membeli licensi atau file ini kepada orang lain jika terjadi kesalahan dalam alat ini saya tidak bertanggung jawab!.</i>
 </p>
 
 ## ✨ **Update Terbaru**
-- Dukungan penuh untuk Python 3.x.
+- Dukungan penuh untuk Python 3.12.x.
 - Tampilan antarmuka yang simpel namun elegan.
 - Panduan instalasi step-by-step untuk pemula.
 - List method baru:
   - api threads
   - api async action
   - api google smartlock
+  - web api
 
 ## 🚀 **Cara Menggunakan**
 
