@@ -48,7 +48,7 @@ pkg install python -y
 pip install requests
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
-python menu.py
+python3.12 menu.py
 ```
 ## ⚠️ Peringatan
 Gunakan alat ini dengan bijak!
