@@ -1,61 +1,32 @@
-<p align="center">
-  <img src="https://gifdb.com/images/high/glitching-hacker-hub-biwszmcveudzaori.gif" width="300"/>
-</p>
+<div align="center"> <img src="https://gifdb.com/images/high/glitching-hacker-hub-biwszmcveudzaori.gif" width="300" alt="Hacker GIF" /> </div> <h1 align="center" style="font-family: 'Roboto', sans-serif; font-size: 3em; color: #1E88E5; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"> <b>Instagram Bruteforce 2025</b> </h1> <div align="center"> <img src="https://img.shields.io/badge/Author-KhamdihiDev-1E88E5?style=for-the-badge&logo=github&logoColor=white" alt="Author Badge" /> <img src="https://img.shields.io/badge/Written%20In-Python3.12.x-4CAF50?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge" /> <img src="https://img.shields.io/badge/Open%20Source-No-FFC107?style=for-the-badge&logo=lock&logoColor=white" alt="Open Source Badge" /> <img src="https://img.shields.io/badge/Premium-Yes-F44336?style=for-the-badge&logo=crown&logoColor=white" alt="Premium Badge" /> <img src="https://img.shields.io/badge/Language-English%20%26%20Bahasa%20Indonesia-9C27B0?style=for-the-badge&logo=translate&logoColor=white" alt="Language Support Badge" /> </div> <p align="center" style="font-family: 'Arial', sans-serif; font-size: 1.2em; color: #E53935; margin-top: 20px;"> <i>⚠️ Please Note: If you purchase this license or file from others, you are fully responsible for any issues. The developer assumes no liability!</i> </p>
 
-<h1 align="center">
-  <b><i>Instagram Bruteforce</i></b>
-</h1>
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Author-KhamdihiDev-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Written%20In-Python3.12.x-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Open%20Source-No-yellow?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Premium-Yes-red?style=for-the-badge">
-</div>
+### ✨ What's New?
+  - 🐍 Full support for Python 3.12.x.
+  - 🎨 Sleek and modern interface.
+  - 📖 Step-by-step installation guide for beginners.
+  - 🔑 New login methods:
+     - API Threads
+     - API Async Action
+     - API Google SmartLock
+  - 🌐 Dual language support: English & Indonesia.
 
-<p align="center">
-  <i>Alat ini mendukung semua versi Python3.12.x dengan tampilan klasik dan dilengkapi panduan instalasi yang mudah!</i>
-  <br>
-  <i>Membeli licensi atau file ini kepada orang lain jika terjadi kesalahan dalam alat ini saya tidak bertanggung jawab!.</i>
-</p>
-
-## ✨ **Update Terbaru**
-- Dukungan penuh untuk Python 3.12.x.
-- Tampilan antarmuka yang simpel namun elegan.
-- Panduan instalasi step-by-step untuk pemula.
-- List method baru:
-  - api threads
-  - api async action
-  - api google smartlock
-  - web api
-
-## 🚀 **Cara Menggunakan**
-
-### **Jika Sudah Terinstal**
-```bash
-cd $HOME
-cd Prem
-git pull
-python3 menu.py
+### 🚀 Install on termux
 ```
-### **Jika Belum install**
-```bash
-pkg update -y
-pkg upgrade -y
-termux-change-repo
-pkg install git
-pkg install python -y
-pip install requests
+pkg install git python -y
+pip install requests pycryptodomex questionary
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
 python3.12 menu.py
 ```
-## ⚠️ Peringatan
-Gunakan alat ini dengan bijak!
-Pengembang tidak bertanggung jawab atas penyalahgunaan atau dampak hukum yang mungkin terjadi. Dengan menginstal alat ini, Anda dianggap telah menyetujui syarat dan ketentuan yang diberikan.
 
-## 📱 Termux & Kontak
-<ul>
-  <li>Unduh termux <a href='https://f-droid.org/repo/com.termux_1020.apk'>Download sekarang</a></li>
-  <li>Kontak <a href='https://wa.me/+6283853140469'>Whatsapp</a></li>
-</ul>
+### jika sudah install
+```
+cd $HOME
+cd Prem
+python3.12 menu.py
+```
+
+🎥 Watch Tutorial on YouTube
+<div align="center"> <a href="https://youtube.com/channel/your-channel-id" target="_blank"> <img src="https://img.shields.io/badge/Watch%20Tutorial%20on%20YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Button"></a> </div>
+
