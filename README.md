@@ -28,5 +28,5 @@ python3.12 menu.py
 ```
 
 🎥 Watch Tutorial on YouTube
-<div align="center"> <a href="https://youtube.com/channel/your-channel-id" target="_blank"> <img src="https://img.shields.io/badge/Watch%20Tutorial%20on%20YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Button"></a> </div>
+<div align="center"> <a href="https://www.youtube.com/@khamdihidev" target="_blank"> <img src="https://img.shields.io/badge/Watch%20Tutorial%20on%20YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Button"></a> </div>
 
