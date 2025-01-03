@@ -27,6 +27,9 @@ cd Prem
 python3.12 menu.py
 ```
 
+### tampilan
+![Logo](image/provescrek.png)
+
 🎥 Watch Tutorial on YouTube
 <div align="center"> <a href="https://www.youtube.com/@khamdihidev" target="_blank"> <img src="https://img.shields.io/badge/Watch%20Tutorial%20on%20YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Button"></a> </div>
 
