@@ -20,7 +20,7 @@ cd Prem
 python3.12 menu.py
 ```
 
-### jika sudah install
+### If you have installed it
 ```
 cd $HOME
 cd Prem
