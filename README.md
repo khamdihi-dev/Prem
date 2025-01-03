@@ -27,7 +27,7 @@ cd Prem
 python3.12 menu.py
 ```
 
-### tampilan
+### Display
 ![Logo](image/provescrek.png)
 
 🎥 Watch Tutorial on YouTube
