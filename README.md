@@ -6,7 +6,7 @@
   - 🎨 Sleek and modern interface.
   - 📖 Step-by-step installation guide for beginners.
   - 🔑 New login methods:
-     - API Threads
+     - Api v1
      - API Async Action
      - API Google SmartLock
   - 🌐 Dual language support: English & Indonesia.
