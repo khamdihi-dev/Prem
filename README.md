@@ -6,9 +6,10 @@
   - 🎨 Sleek and modern interface.
   - 📖 Step-by-step installation guide for beginners.
   - 🔑 New login methods:
-     - Api v1
-     - API Async Action
-     - API Google SmartLock
+     - Api threads
+     - Api Async Action
+     - Api Google SmartLock
+     - Api Recovery
   - 🌐 Dual language support: English & Indonesia.
 
 ### 🚀 Install on termux
