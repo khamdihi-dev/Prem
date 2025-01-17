@@ -48,6 +48,10 @@ class languages:
                     "Dump list komentar",
                     "Cek hasil crack",
                     "Crack ulang akun checkpoint",
+                    "Decode Bearer token",
+                    "Stok akun aman Author",
+                    "Cari akun di inboxkitten",
+                    "Hapu data akun dan a2f",
                     "Keluar"
                 ]
             },
@@ -60,6 +64,10 @@ class languages:
                     "Dump list of comments",
                     "Check crack results",
                     "Re-crack checkpoint accounts",
+                    "Decode Bearer token",
+                    "Stock of accounts is safe Author",
+                    "Find accounts on InboxKitten",
+                    "Delete account data and 2FA",
                     "Exit"
                 ]
             }
@@ -115,17 +123,19 @@ class languages:
             "id": {
                 "message":"pilih method",
                 "method": [
-                    "Login api app v1",
-                    "Login api app manual instagram",
-                    "Login api app smartlock instagram"
+                    "Login api app manual",
+                    "Login api app recovery",
+                    "Login api app smartlock",
+                    "Login api app threads"
                 ]
             },
             "en": {
                 "message":"choose method",
                 "method": [
-                    "Login api app v1",
-                    "Login api app manual instagram",
-                    "Login api app smartlock instagram"
+                    "Login api app manual",
+                    "Login api app recovery",
+                    "Login api app smartlock",
+                    "Login api app threads"
                 ]
             }
         }
@@ -136,15 +146,19 @@ class languages:
             "id": {
                 "message": "pilih kombinasi sandi",
                 "header": [
-                    "buat sandi otomatis",
-                    "buat sandi manual"
+                    "sandi nama angka 0-5",
+                    "sandi nama angka 0-6",
+                    "sandi nama dan username 0-5",
+                    "sandi nama dan custom angka belakang"
                 ]
             },
             "en": {
                 "message": "choose password combination",
                 "header": [
-                    "create automatic password",
-                    "create manual password"
+                    "password name number 0-5",
+                    "password name number 0-6",
+                    "password name and username 0-5",
+                    "password name and custom number behind"
                 ]
             }
         }
@@ -179,3 +193,42 @@ class languages:
             }
         }
         return self.inv[self.lang]
+    
+    def findwithinbox(self):
+        self.inv = {
+            'id':{
+                'message':'\nCari akun yang terkait dengan inboxkitten',
+                'message1':'\nMasukan kata kunci, pisahkan dengan koma : ',
+                'message2':'Filter akun medsos Y/T : '
+            },
+            'en':{
+                'message':"\nFind accounts associated with InboxKitten",
+                'message1':"\nEnter keywords, separated by commas : ",
+                'message2': 'Filter social media accounts Y/N: '
+            }
+        }
+        return self.inv[self.lang]
+    
+    def MedsosList(self):
+        self.inv = {
+            'id': {
+                'head':'Pilih medsos yang mau di ambil',
+                'message': [
+                    'akun tiktok',
+                    'akun instagram',
+                    'akun facebook',
+                    'akun twitter',
+                ]
+            },
+            'en': {
+                'head': 'Select the social media platform to retrieve',
+                'message': [
+                    'TikTok account',
+                    'Instagram account',
+                    'Facebook account',
+                    'Twitter account',
+                ]
+            }
+        }
+        return self.inv[self.lang]
+
