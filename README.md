@@ -15,7 +15,7 @@
 ### 🚀 Install on termux
 ```
 pkg install git python -y
-pip3.12 install requests bs4 pytz questionary rich
+pip3.12 install requests bs4 pytz questionary rich cython
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
 python3.12 menu.py -> [ crack ]
