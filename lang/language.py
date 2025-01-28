@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+
+"""
+Copyright (c) 2023-2025 ibrut developers (https://github.com/khamdihi-dev)
+Ganti Nama, Jual Enak Banget Lu, Gk Punya Malu??
+"""
+
+H = "\033[32m"   # Hijau
+K = "\033[37m"   # Putih (White - Alternative)
+
 class languages:
     def __init__(self, lang):
         self.lang = lang
@@ -49,9 +59,9 @@ class languages:
                     "Cek hasil crack",
                     "Crack ulang akun checkpoint",
                     "Decode Bearer token",
-                    "Stok akun aman Author",
+                    "Beli akun di author",
                     "Cari akun di inboxkitten",
-                    "Hapu data akun dan a2f",
+                    "Hapus data akun dan a2f (Gratis beberapa fitur)",
                     "Keluar"
                 ]
             },
@@ -65,9 +75,9 @@ class languages:
                     "Check crack results",
                     "Re-crack checkpoint accounts",
                     "Decode Bearer token",
-                    "Stock of accounts is safe Author",
+                    "Buy an account from the author.",
                     "Find accounts on InboxKitten",
-                    "Delete account data and 2FA",
+                    "Delete account data and 2FA (Free some features)",
                     "Exit"
                 ]
             }
@@ -99,22 +109,22 @@ class languages:
     
     def dumpflfw(self):
         self.inv = {
-            "id": {"message":"masukan username target, pastikan akun bersifat publik","input":"masukan username : "},
-            "en": {"message":"Enter the target username, make sure the account is public.","input":"enter username : "}
+            "id": {"message":f"[{H}?{K}] masukan username target, pastikan akun bersifat publik","input":f"[{H}?{K}] masukan username : "},
+            "en": {"message":f"[{H}?{K}] Enter the target username, make sure the account is public.","input":f"[{H}?{K}] enter username : "}
         }
         return self.inv[self.lang]
     
     def komentar(self):
         self.inv = {
-            "id":{"message": "masukan tautan link postingan atau reels","input":"masukan tautan : "},
-            "en": {"message": "Enter the link to the post or reels.","input": "Enter link : "}
+            "id":{"message": f"[{H}?{K}] masukan tautan link postingan atau reels","input":f"[{H}?{K}] masukan tautan : "},
+            "en": {"message": f"[{H}?{K}] Enter the link to the post or reels.","input": f"[{H}?{K}] Enter link : "}
         }
         return self.inv[self.lang]
     
     def pencarian(self):
         self.inv = {
-            "id":{"message": "masukan nama seseorang bebas","input":"nama orang : "},
-            "en": {"message": "Enter any person's name.","input": "Person's name : "}
+            "id":{"message": f"[{H}?{K}] masukan nama seseorang bebas","input":f"[{H}?{K}] nama orang : "},
+            "en": {"message": f"[{H}?{K}] Enter any person's name.","input": f"[{H}?{K}] Person's name : "}
         }
         return self.inv[self.lang]
 
@@ -166,8 +176,8 @@ class languages:
 
     def message_sandi(self):
         self.inv = {
-            "id": {"header": "\nmasukan kata sandi, sandi harus lebih dari 6huruf. banyak password pisahkan dengan koma"},
-            "en": {"header": "\nenter the password, the password must be more than 6 characters. separate multiple passwords with a comma"},
+            "id": {"header": f"\n[{H}?{K}] masukan kata sandi, sandi harus lebih dari 6huruf. banyak password pisahkan dengan koma"},
+            "en": {"header": f"\n[{H}?{K}] enter the password, the password must be more than 6 characters. separate multiple passwords with a comma"},
         }
         return self.inv[self.lang]
 
@@ -197,14 +207,14 @@ class languages:
     def findwithinbox(self):
         self.inv = {
             'id':{
-                'message':'\nCari akun yang terkait dengan inboxkitten',
-                'message1':'\nMasukan kata kunci, pisahkan dengan koma : ',
-                'message2':'Filter akun medsos Y/T : '
+                'message':f'\n[{H}?{K}] Cari akun yang terkait dengan inboxkitten',
+                'message1':f'\n[{H}?{K}] Masukan kata kunci, pisahkan dengan koma : ',
+                'message2':f'[{H}?{K}] Filter akun medsos Y/T : '
             },
             'en':{
-                'message':"\nFind accounts associated with InboxKitten",
-                'message1':"\nEnter keywords, separated by commas : ",
-                'message2': 'Filter social media accounts Y/N: '
+                'message': f"\n[{H}?{K}] Find accounts associated with InboxKitten",
+                'message1': f"\n[{H}?{K}] Enter keywords, separated by commas : ",
+                'message2': f'[{H}?{K}] Filter social media accounts Y/N: '
             }
         }
         return self.inv[self.lang]
@@ -232,3 +242,31 @@ class languages:
         }
         return self.inv[self.lang]
 
+    def MenuSecurity(self):
+        self.inv = {
+            'id': {
+                'head': 'Pilih menu keamanan yang mau di ambil',
+                'message': [
+                    'tambahkan akun yang mau di amanin',
+                    'hapus nomor, email dan tambah email',
+                    'hapus akun yang sudah di amanin',
+                    'ganti kata sandi -> gratis',
+                    'Hapus akun yang sudah terhubung',
+                    'Log out, Ganti tumbal',
+                    'Kembali ke instagram tools'
+                ]
+            },
+            'en': {
+                'head': 'Select the security menu you want to use',
+                'message': [
+                    'add the account you want to secure',
+                    'remove phone number, email, and add email',
+                    'delete the account that has been secured',
+                    'change password -> free',
+                    'delete accounts that are already connected',
+                    'Log out, Replace dummy',
+                    'Back to instagram tools'
+                ]
+            }
+        }
+        return self.inv[self.lang]
