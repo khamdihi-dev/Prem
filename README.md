@@ -6,26 +6,29 @@
   - 🎨 Sleek and modern interface.
   - 📖 Step-by-step installation guide for beginners.
   - 🔑 New login methods:
-     - Api threads
-     - Api Async Action
-     - Api Google SmartLock
-     - Api Recovery
+     - Api Instagram threads
+     - Api Instagram type SmartLock
+     - Api instagram type Recovery
+     - Api instagram type manual
   - 🌐 Dual language support: English & Indonesia.
 
 ### 🚀 Install on termux
 ```
 pkg install git python -y
-pip3.12 install requests bs4 pyytz questionary
+pip3.12 install requests bs4 pytz questionary rich
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
-python3.12 menu.py
+python3.12 menu.py -> [ crack ]
+python3.12 menu.py -> [ masuk langsung ke menu 2fa ]
+
 ```
 
 ### If you have installed it
 ```
 cd $HOME
 cd Prem
-python3.12 menu.py
+python3.12 menu.py -> [ crack ]
+python3.12 menu.py -> [ masuk langsung ke menu 2fa ]
 ```
 
 ### Display
