@@ -18,8 +18,8 @@ pkg install git python -y
 pip3.12 install requests bs4 pytz questionary rich cython
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
-python3.12 menu.py -> [ crack ]
-python3.12 menu.py -> [ masuk langsung ke menu 2fa ]
+python3.12 run.py -> [ crack ]
+python3.12 run.py -> [ masuk langsung ke menu 2fa ]
 
 ```
 
@@ -27,8 +27,8 @@ python3.12 menu.py -> [ masuk langsung ke menu 2fa ]
 ```
 cd $HOME
 cd Prem
-python3.12 menu.py -> [ crack ]
-python3.12 menu.py -> [ masuk langsung ke menu 2fa ]
+python3.12 run.py -> [ crack ]
+python3.12 run.py -> [ masuk langsung ke menu 2fa ]
 ```
 
 ### Display
