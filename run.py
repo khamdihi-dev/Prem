@@ -19,9 +19,9 @@ class main:
             if sys.argv[1] == '2fa':
                 factor.TwoFactor()
                 sys.exit()
-            else:menu.languages_set()
+            else:exit('Lagi upload file baru')
         else:
-            menu.languages_set()
+            exit('Lagi upload file baru')
 
 if __name__ == '__main__':
     os.system('git pull')
