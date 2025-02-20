@@ -17,7 +17,7 @@ class main:
     def Biji(self):
         if len(sys.argv) == 2:
             if sys.argv[1] == '2fa':
-                exit('\nSedang dalam perbaikan..')
+                factor.TwoFactor()
                 sys.exit()
             else:menu.languages_set()
         else:
