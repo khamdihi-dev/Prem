@@ -25,4 +25,5 @@ class main:
 
 if __name__ == '__main__':
     os.system('git pull')
-    main().Biji()
+    exit('Proses upload, silahkan tunggu beberapa menit kedepan')
+    # main().Biji()
