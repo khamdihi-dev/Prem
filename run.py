@@ -10,6 +10,7 @@ import sys
 import menu
 from twofactor import private_request as factor
 
+
 class main:
     def __init__(self):
         pass
@@ -25,5 +26,4 @@ class main:
 
 if __name__ == '__main__':
     os.system('git pull')
-    exit('Proses upload, silahkan tunggu beberapa menit kedepan')
-    # main().Biji()
+    main().Biji()
