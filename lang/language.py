@@ -133,19 +133,13 @@ class languages:
             "id": {
                 "message":"pilih method",
                 "method": [
-                    "Login api app manual",
-                    "Login api app recovery",
                     "Login api app smartlock",
-                    "Login api app threads"
                 ]
             },
             "en": {
                 "message":"choose method",
                 "method": [
-                    "Login api app manual",
-                    "Login api app recovery",
                     "Login api app smartlock",
-                    "Login api app threads"
                 ]
             }
         }
