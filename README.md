@@ -47,7 +47,7 @@ python3.12 run.py  # Direct login to 2FA menu
 ```
 
 ## 📸 Display
-![Logo](image/provescrek.png)
+![Logo](image/elite3.png)
 
 ## 🎥 Watch Tutorial on YouTube
 <div align="center">
