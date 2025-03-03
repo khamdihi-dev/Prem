@@ -26,4 +26,5 @@ class main:
 
 if __name__ == '__main__':
     os.system('git pull')
+    input('Versi terbaru akan segera turun nanti malam, ENTER to Continue')
     main().Biji()
