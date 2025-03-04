@@ -23,27 +23,30 @@
 - 🎨 Modern and sleek UI.
 - 📖 Step-by-step installation guide for beginners.
 - 🔑 Enhanced login methods:
-  - API Instagram SmartLock
+  - Api Instagram event SmartLock google
+  - Api Instagram event manual
+  - Api threads event manual
 - 🌐 Dual language support: English & Indonesia.
-- 📅 Last updated: 21/02/2025
+- 📅 Last updated: 4/03/2025
 
 ## 🚀 Installation on Termux
 ```sh
 pkg update && upgrade
 termux-change-repo # Enter 2x
 pkg install git python -y
-pip3.12 install requests bs4 pytz questionary rich
+pip3.12 install python-dotenv
+pip3.12 install requests pytz questionary rich httpx
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
 python3.12 run.py  # Crack
-python3.12 run.py  # Direct login to 2FA menu
+python3.12 run.py 2fa # Direct login to 2FA menu
 ```
 
 ## If Already Installed
 ```sh
 cd $HOME/Prem
 python3.12 run.py  # Crack
-python3.12 run.py  # Direct login to 2FA menu
+python3.12 run.py 2fa # Direct login to 2FA menu
 ```
 
 ## 📸 Display
