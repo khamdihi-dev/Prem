@@ -133,17 +133,47 @@ class languages:
             "id": {
                 "message":"pilih method",
                 "method": [
-                    "Login api app smartlock",
+                    "Login api event smartlock 2024",
+                    "Login api event manual 2025",
+                    "Login api event thread 2025",
                 ]
             },
             "en": {
                 "message":"choose method",
                 "method": [
-                    "Login api app smartlock",
+                    "Login api event smartlock 2024",
+                    "Login api event manual 2025",
+                    "Login api event thread 2025",
                 ]
             }
         }
         return self.inv[self.lang]
+    
+    def simphone(self):
+        self.inv = {
+            'id': {
+                'list': [
+                    'provider Axis',
+                    'provider Tri',
+                    'provider Telkomsel',
+                    'provider Indosat',
+                    'provider XL',
+                    'provider Smartfren',
+                ]
+            },
+            'en': {
+                'list': [
+                    'Axis provider',
+                    'Tri provider',
+                    'Telkomsel provider',
+                    'Indosat provider',
+                    'XL provider',
+                    'Smartfren provider',
+                ]
+            }
+        }
+        return self.inv[self.lang]
+
     
     def passetlist(self):
         self.inv = {
