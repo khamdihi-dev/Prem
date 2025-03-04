@@ -18,10 +18,8 @@ import requests
 import questionary
 import uuid
 
-from method import Brute
 from lang import language
-from method import ApiKey
-from method import Brute
+from method import ApiKey,Brute
 from prompt_toolkit.styles import Style
 from concurrent.futures import ThreadPoolExecutor
 from security import password as changePASS
