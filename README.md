@@ -18,16 +18,27 @@
     <i>⚠️ Important: Purchasing this license from an unauthorized source is at your own risk. The developer is not responsible for any issues!</i>
 </p>
 
+---
+
+## 🛠️ Bahan dan Alat
+- **Termux** → [Download](https://f-droid.org/repo/com.termux_1020.apk)
+- **Extension Get Cookie IG** → [Download](https://github.com/khamdihi-dev/InstaExtnGetCokie/raw/refs/heads/main/cokieInsta.zip)
+- **Tutorial Pasang Extension** → [Tonton di sini](https://www.youtube.com/watch?v=readopB_D6s&pp=ygUSa2hhbWRpaGkgZ2V0IGNva2ll)
+
+---
+
 ## ✨ What's New?
 - 🐍 Full support for Python 3.12.x.
 - 🎨 Modern and sleek UI.
-- 📖 Step-by-step installation guide for beginners.
+- 📚 Step-by-step installation guide for beginners.
 - 🔑 Enhanced login methods:
-  - Api Instagram event SmartLock google
-  - Api Instagram event manual
-  - Api threads event manual
+  - API Instagram event SmartLock Google
+  - API Instagram event manual
+  - API Threads event manual
 - 🌐 Dual language support: English & Indonesia.
-- 📅 Last updated: 4/03/2025
+- 🗓 Last updated: 4/03/2025
+
+---
 
 ## 🚀 Installation on Termux
 ```sh
@@ -42,15 +53,21 @@ python3.12 run.py  # Crack
 python3.12 run.py 2fa # Direct login to 2FA menu
 ```
 
-## If Already Installed
+---
+
+## 🛠️ If Already Installed
 ```sh
 cd $HOME/Prem
 python3.12 run.py  # Crack
 python3.12 run.py 2fa # Direct login to 2FA menu
 ```
 
+---
+
 ## 📸 Display
 ![Logo](image/elite3.png)
+
+---
 
 ## 🎥 Watch Tutorial on YouTube
 <div align="center">
