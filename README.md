@@ -36,7 +36,7 @@
   - API Instagram event manual
   - API Threads event manual
 - 🌐 Dual language support: English & Indonesia.
-- 🗓 Last updated: 4/03/2025
+- 🗓 Last updated: 7/03/2025
 
 ---
 
