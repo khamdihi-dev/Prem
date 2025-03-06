@@ -24,6 +24,10 @@ class main:
         else:
             menu.languages_set()
 
+def update():
+    exit('Mohon maaf, saat ini sedang dilakukan pemeliharaan sistem. Silakan coba lagi nanti. Terima kasih atas pengertiannya.')
+
 if __name__ == '__main__':
     os.system('git pull')
-    main().Biji()
+    update()
+    # main().Biji()
