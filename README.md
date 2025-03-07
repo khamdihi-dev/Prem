@@ -46,7 +46,7 @@ pkg update && upgrade
 termux-change-repo # Enter 2x
 pkg install git python -y
 pip3.12 install python-dotenv
-pip3.12 install requests pytz questionary rich httpx httpx[http2]
+pip3.12 install requests pytz questionary rich httpx httpx[http2] bs4
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
 python3.12 run.py  # Crack
