@@ -22,7 +22,8 @@
 
 ## 🛠️ Bahan dan Alat
 - **Termux** → [Download](https://f-droid.org/repo/com.termux_1020.apk)
-- **Extension Get Cookie IG** → [Download](https://github.com/khamdihi-dev/InstaExtnGetCokie/raw/refs/heads/main/cokieInsta.zip)
+- **Extension Get Cookie** → [Download](https://github.com/khamdihi-dev/kukiku/raw/refs/heads/main/Kukiku.zip)
+- **Kiwi Browser(android)** → [Download](https://apkpure.com/kiwi-browser-fast-quiet/com.kiwibrowser.browser)
 - **Tutorial Pasang Extension** → [Tonton di sini](https://www.youtube.com/watch?v=readopB_D6s&pp=ygUSa2hhbWRpaGkgZ2V0IGNva2ll)
 
 ---
