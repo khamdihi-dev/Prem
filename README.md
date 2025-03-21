@@ -37,7 +37,7 @@
   - API Instagram event manual
   - API Threads event manual
 - 🌐 Dual language support: English & Indonesia.
-- 🗓 Last updated: 7/03/2025
+- 🗓 Last updated: 21/03/2025
 
 ---
 
@@ -46,8 +46,7 @@
 pkg update && upgrade
 termux-change-repo # Enter 2x
 pkg install git python -y
-pip3.12 install python-dotenv
-pip3.12 install requests pytz questionary rich httpx httpx[http2] bs4
+pip3.12 install -r requirements.txt
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
 python3.12 run.py  # Crack
