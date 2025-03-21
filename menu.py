@@ -18,24 +18,19 @@ import requests
 import questionary
 import uuid
 
+from method import Brute
 from lang import language
-from method import ApiKey,Brute
 from prompt_toolkit.styles import Style
 from concurrent.futures import ThreadPoolExecutor
 from security import password as changePASS
 from twofactor import private_request as factor
 from pointuser import reward
 from dotenv import load_dotenv
-
+from registrasi import license as Buy
 load_dotenv()
 
 bahasa = []
 dumpdata = []
-
-# version = sys.version.split(' ')[0][:4]
-# if version != '3.12':
-#     print(language.languages('id').get_python_update_instructions()['header'])
-#     exit()
 
 A = "\033[90m"   # Abu-abu
 B = "\033[94m"   # Biru
@@ -63,6 +58,7 @@ W = "\033[37m"   # Putih
 X = "\033[90m"   # Abu-abu Tua
 Y = "\033[93m"   # Kuning
 Z = "\033[33m"   # Kuning Gelap (Gold)
+RS = '\033[0m'
 
 M3 = '\033[1m\033[38;5;88m'
 BJ = '\033[1m\033[38;5;208m'
@@ -84,7 +80,8 @@ def clear():
      / _// / / __/ _/{P}_/_ < {BJ}
     /___/_/_/\__/___/{P}____/{P} 
      
-     Welcome to {BJ}Elite3 {D}: {H}20.1{P}
+  Hi, Welcome to {BJ}Elite3 {D}: {H}22.0{P}
+
 ''')
     
 
@@ -285,7 +282,7 @@ class menu:
         self.uid_user = []
         self.uid_link = []
         self.listemail = []
-        self.styl = {'choices':[],'qmark': '(?)','pointer': ' >'}
+        self.styl = {'choices':[],'qmark': '','pointer': ' >'}
 
     def clear1(self):
         if os.path.isfile('data/login.txt'):
@@ -298,27 +295,37 @@ class menu:
             Login().Loginwith()
 
     def userPoint(self):
-        self.pointuser = reward.point_new()
-        self.free_keys, self.user_sisa, self.point_user = self.pointuser
+        if os.path.isfile('data/.data_users.json') is False:Buy.Akses().Daftar()
+        else:Buy.UserKey().konfirmasi_keys()
         self.username, self.fullname, self.follower, self.following_info, self.postingan = infone().profile()
-        self.gif = 'Free 1minggu' if self.user_sisa == 0 else f'{self.point_user}/{self.user_sisa}'
+        account = json.loads(open('data/.data_users.json','r').read())
+        self.pointku = account['point']
+        if self.pointku >= 5:
+            self.pointku = f'{H}Claim Licensi 1 minggu{RS}'
+        else:
+            self.pointku = f'Kumpulkan {R}{5-self.pointku}{RS} point lagi'
         print(f'''
-All About you
+ All About you
 
     - Username  : {self.username}
     - Fullname  : {self.fullname}
     - Follower  : {self.follower}
     - Following : {self.following_info}
     - Postingan : {self.postingan}
-    - Point     : {self.gif}
 
+ Account users
+
+    - Email     : {account["email"]}
+    - Paket     : {account["paket"]}
+    - Durasi    : {account["durasi"]}
+    - Bergabung : {account["daftar"]}
+    - Expies    : {account["kadarluarsa"]}
+    - Point     : {self.pointku}
 ''')    
     def instagram(self):
         clear()
         self.clear1()
         self.userPoint()
-        if os.path.isfile('data/.keys.txt') is False:ApiKey.UserKey().BuyLicen()
-        else:ApiKey.UserKey().konfirkeys()
         self.dihi = self.ulsd.menu_list()['header']
         if len(self.styl['choices']) >0:self.styl['choices'].clear()
         self.styl['choices'].extend(self.dihi)
@@ -353,13 +360,16 @@ All About you
     
     def change_pas(self):
         print(f'\n[{H} PASSWORD CHANGE {K}]\n')
-        self.cookie = input(f'[{H}?{K}] Cookie : ')
-        self.OLDpw = input(f'[{H}?{K}] Sandi saat ini : ')
-        self.Newpw = input(f'[{H}?{K}] Sandi Baru : ')
+        self.cookie = input(' Cookie Akun : ')
+        self.OLDpw = input(' Sandi saat ini : ')
+        self.Newpw = input(' Sandi Baru : ')
         print('\n')
-        changePASS.change(self.cookie,self.OLDpw,self.Newpw)
+        change = changePASS.change(self.cookie,self.OLDpw,self.Newpw).password()
+        if change is True:
+            print(f'\nSandi berhasil di ubah menjadi {self.Newpw}')
+        else:
+            print('\n Sandi salah coba lagi')
         sys.exit()
-        
         
     def findinboxkitten(self):
         self.filter = {'filter': False, 'platform': None}
@@ -418,7 +428,6 @@ All About you
         except requests.exceptions.RequestException:
             time.sleep(10)
 
-
     def stoksaya(self,url):
         try:
             self.req = requests.get(url).json()
@@ -440,7 +449,7 @@ All About you
             exit('\nDecode Error')
 
     def userinfo(self):
-        if os.path.isfile('data/.keys.txt') is False:ApiKey.UserKey().konfirkeys()
+        if os.path.isfile('data/.keys.txt') is False:Buy.UserKey().konfirmasi_keys()
         if os.path.isfile('data/login.txt') is False:Login().Loginwith()
         self.ingf = self.ulsd.userandkeyinfo()
         self.keys = open('data/.info.txt','r').read()
@@ -511,7 +520,6 @@ instagram cookies   : {self.info['instagram cookies']}
         for self.userid in self.uid_user:
             dump().following(self.userid, '')
         Brute.InstaHack(bahasa,dumpdata).methodList()
-
 
     def komentar(self):
         print(f'\n{self.ulsd.komentar()["message"]}')
@@ -701,7 +709,7 @@ class dump:
                 for self.users in self.req['data']['user']['edge_followed_by']['edges']:
                     self.udata = self.users['node']['username']+'|'+self.users['node']['full_name'].replace('|','')
                     dumpdata.append(self.udata)
-                    print(f'[{H}+{K}] success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
+                    print(f' Success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
                 if(self.req['data']['user']['edge_followed_by']['page_info']['has_next_page']==True):
                     self.followers(userid, self.req['data']['user']['edge_followed_by']['page_info']['end_cursor'])
                 else: return
@@ -736,7 +744,7 @@ class dump:
                 for self.users in self.req['data']['user']['edge_follow']['edges']:
                     self.udata = self.users['node']['username']+'|'+self.users['node']['full_name'].replace('|','')
                     dumpdata.append(self.udata)
-                    print(f'[{H}+{K}] success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
+                    print(f' Success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
                 if(self.req['data']['user']['edge_follow']['page_info']['has_next_page']==True):
                     self.following(userid, self.req['data']['user']['edge_follow']['page_info']['end_cursor'])
             except:return
@@ -770,7 +778,7 @@ class dump:
                 for self.usr in self.req['comments']:
                     self.data_ = self.usr['user']['username'] +'|'+ self.usr['user']['full_name']
                     if self.data_ not in dumpdata: dumpdata.append(self.data_)
-                    print(f'[{H}+{K}] success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
+                    print(f' Success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
                 self.abc = self.req['next_min_id']
                 self.komentar(media_id, self.abc)
             except: return

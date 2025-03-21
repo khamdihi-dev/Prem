@@ -1,0 +1,8 @@
+pytz
+httpx
+httpx[http2]
+requests
+questionary
+dotenv
+rich
+email_validator
