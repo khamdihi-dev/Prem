@@ -61,7 +61,7 @@ class languages:
                     "Decode Bearer token",
                     "Beli akun di author",
                     "Cari akun di inboxkitten",
-                    "Hapus data akun dan a2f (Gratis beberapa fitur)",
+                    "Amanin akun",
                     "Keluar"
                 ]
             },
@@ -77,7 +77,7 @@ class languages:
                     "Decode Bearer token",
                     "Buy an account from the author.",
                     "Find accounts on InboxKitten",
-                    "Delete account data and 2FA (Free some features)",
+                    "Secure account",
                     "Exit"
                 ]
             }
@@ -109,29 +109,29 @@ class languages:
     
     def dumpflfw(self):
         self.inv = {
-            "id": {"message":f"[{H}?{K}] masukan username target, pastikan akun bersifat publik","input":f"[{H}?{K}] masukan username : "},
-            "en": {"message":f"[{H}?{K}] Enter the target username, make sure the account is public.","input":f"[{H}?{K}] enter username : "}
+            "id": {"message":" masukan username target, pastikan akun bersifat publik","input":f" masukan username : "},
+            "en": {"message":" Enter the target username, make sure the account is public.","input":f" enter username : "}
         }
         return self.inv[self.lang]
     
     def komentar(self):
         self.inv = {
-            "id":{"message": f"[{H}?{K}] masukan tautan link postingan atau reels","input":f"[{H}?{K}] masukan tautan : "},
-            "en": {"message": f"[{H}?{K}] Enter the link to the post or reels.","input": f"[{H}?{K}] Enter link : "}
+            "id":{"message": " masukan tautan link postingan atau reels","input":" masukan tautan : "},
+            "en": {"message": " Enter the link to the post or reels.","input": " Enter link : "}
         }
         return self.inv[self.lang]
     
     def pencarian(self):
         self.inv = {
-            "id":{"message": f"[{H}?{K}] masukan nama seseorang bebas","input":f"[{H}?{K}] nama orang : "},
-            "en": {"message": f"[{H}?{K}] Enter any person's name.","input": f"[{H}?{K}] Person's name : "}
+            "id":{"message": " masukan nama seseorang bebas","input":" nama orang : "},
+            "en": {"message": " Enter any person's name.","input":" Person's name : "}
         }
         return self.inv[self.lang]
 
     def methodlist(self):
         self.inv = {
             "id": {
-                "message":"pilih method",
+                "message":"Api",
                 "method": [
                     "Login api event smartlock 2024",
                     "Login api event manual 2025",
@@ -139,7 +139,7 @@ class languages:
                 ]
             },
             "en": {
-                "message":"choose method",
+                "message":"Api",
                 "method": [
                     "Login api event smartlock 2024",
                     "Login api event manual 2025",
@@ -200,8 +200,8 @@ class languages:
 
     def message_sandi(self):
         self.inv = {
-            "id": {"header": f"\n[{H}?{K}] masukan kata sandi, sandi harus lebih dari 6huruf. banyak password pisahkan dengan koma"},
-            "en": {"header": f"\n[{H}?{K}] enter the password, the password must be more than 6 characters. separate multiple passwords with a comma"},
+            "id": {"header": " masukan kata sandi, sandi harus lebih dari 6huruf. banyak password pisahkan dengan koma"},
+            "en": {"header": " enter the password, the password must be more than 6 characters. separate multiple passwords with a comma"},
         }
         return self.inv[self.lang]
 
@@ -231,14 +231,14 @@ class languages:
     def findwithinbox(self):
         self.inv = {
             'id':{
-                'message':f'\n[{H}?{K}] Cari akun yang terkait dengan inboxkitten',
-                'message1':f'\n[{H}?{K}] Masukan kata kunci, pisahkan dengan koma : ',
-                'message2':f'[{H}?{K}] Filter akun medsos Y/T : '
+                'message': ' Cari akun yang terkait dengan inboxkitten',
+                'message1': ' Masukan kata kunci, pisahkan dengan koma : ',
+                'message2': ' Filter akun medsos Y/T : '
             },
             'en':{
-                'message': f"\n[{H}?{K}] Find accounts associated with InboxKitten",
-                'message1': f"\n[{H}?{K}] Enter keywords, separated by commas : ",
-                'message2': f'[{H}?{K}] Filter social media accounts Y/N: '
+                'message': " Find accounts associated with InboxKitten",
+                'message1': " Enter keywords, separated by commas : ",
+                'message2': ' Filter social media accounts Y/N: '
             }
         }
         return self.inv[self.lang]
