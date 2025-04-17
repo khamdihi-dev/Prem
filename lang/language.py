@@ -52,7 +52,6 @@ class languages:
             "id": {
                 "message": "pilih menu",
                 "header": [
-                    "Informasi pengguna",
                     "Dump list followers",
                     "Dump list following",
                     "Dump list komentar",
@@ -68,7 +67,6 @@ class languages:
             "en": {
                 "message": "choose menu",
                 "header": [
-                    "User information",
                     "Dump list of followers",
                     "Dump list of following",
                     "Dump list of comments",
@@ -133,17 +131,15 @@ class languages:
             "id": {
                 "message":"Api",
                 "method": [
-                    "Login api event smartlock 2024",
-                    "Login api event manual 2025",
-                    "Login api event thread 2025",
+                    "Login app thread",
+                    "Login api instagram",
                 ]
             },
             "en": {
                 "message":"Api",
                 "method": [
-                    "Login api event smartlock 2024",
-                    "Login api event manual 2025",
-                    "Login api event thread 2025",
+                    "Login app thread",
+                    "Login api instagram",
                 ]
             }
         }
