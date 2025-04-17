@@ -1,2 +1,27 @@
-import zlib, base64, marshal
-exec(marshal.loads(zlib.decompress(base64.b64decode('eJyNVs1vG8cVn/3ih7QiRUuWJRmyh5ZVi45MypYoO5IdV6Idu4nFBJYb1SoKYsQdkUstd5nZpT4Iyi0KHxTARWwgiGu4gZVcGsMB6p7qq+v+AVLkRsRat6KHnqrKAVw4l84sPyRFSpElODM7895v3r735vfmH2DbI1b6lxdocxcoQOE0MFHuuQnO6fkJ3umFCYH2vCZmpQmJAzy4BBThJlDER3wZZMI1z4Wkf7FhPMTZUt5SNTO5fTuuut1RZzsM2BYUnrsJKDhPW5FBTkiKeJPBSSGXLY3iLE4mObDzERiM6MDMgxAXfwgecrZoYm3KZKLwteesaRFVT71lexIJVVetRKLgc7DC1XcvFTQl2vwGlDzySwab5Lft4aruM8ixfayaDZntUpXnUaVf4L3AkqqzRU7hqv6JggWhKGTcu3UV/lEFe45bEElXkc94d0sVxaoUB34UDnerS2GxBFULqB6fqf9h28dAJzgJTG6W58B1Ks2BW21zwnUwy3UCS65KHwVkHwcsf21Xocjdp3nwmbBl33UalVlQ1g1JcZsnkyqAABQafnnx6tX3rv4Kvq1qGBYC0FIVNA0V1cLZ/DTSwyGP7U4jM62pk7bLTKNT0QFbNHJYt0WCkWK78jkFWdj2pvGcoqawadkBhhU3rLeNvK5cJMQgtojnVCskEeZGW8ogLU9sF4PFxOambCmZzuvTTuwhe0gdk2u4qFEzLlOpWBpPF5rK2bJjkjnB/ASwlFkPtN49dOfQaiC46NrgXd6h9cD+2/j3154Hjiyh0mH4YObezJJyv7jc8sZtTJtSc/vd0TujS13Pm7s3BACDOwRWWt54JYB9nRsu0Ny+1tS50tS52tS1LHe9ctPZ5cCR7771gMbgJuDoRnLj7XNL+5fcy8fOLAfe/EYe3BDo9Guzmxr2qTx8HnxxZrhPeHrwAB0+7ZOGz7qfnnGz8fnWkXbhr20cbXecKKHyf/kB+PGZzm3Lc5rltdhb7t2S9Izy8UJuHKV74DTWVGQhHSIFwXmkp6BJIw+NHMHTUFfTQXgN5VRoIramz6MeOMVyhZ5ZmKKpMmloOE0TJj+J0mE4pmqIpg2czCMLzmBiUkWsKypRKXQwJBLByYCkhhGxpRxlBIu00CniYZF0qKIcfNcVI5XCpCCXo15+Y5Lm4XK4PQ0f139Uf6uBDjYA8A/z3wLgHeHXPfLvXITlxQ6PuqsePcszj3qphxa4/+9XyhW8IiiiIv1B+MpVPbMLPD2z0m7pLd/S9T24oLqeEXavKW61xgkOJ+0l46lGtAgSYm3WS9+22A1kGvb4DpCp28OeLTT3Nknfnvqe3bPTp2nQGulaYA/sSk9zr6lmaZ1SX/3GzP7dOoq8lbHzlPes2kqmZbc05bzWBdFqq2k3FMX74DN+O+MpYEG8Ic5X+lnOctUQ2/dE9FF7txB9P8Ce/nghmLasnDkYieSQaeFJVQ8njWyEoNnIxNyb0VNkfKTg0Y0TSZRM40JnddQD6ci0DEJH2bxpnSB4BmkqY8+CMWoUVE1DkWi4F3aPq7pizJowfg2e7A33DkE6MdA/BOcG+kNwOJfT8DiefFe1ItG+0+G+Adj97uVro1d6oKZOY3gJJ6eNEIyliZHFkZOnKAD7wTE0hYhaUQkJtut9glJZVGiIMeNOxAx6Eg2tUPdzE5MTwymsW/TS4E5Tjqen2HZhRrt9tpjFer7gZm04N1/YR61HkTA96OqUiknYmrNsbtbm51HheLWyXEIppEGqkULZSVWDjPahQm2hzECo5iAswFoVMkiWEsc7Y+/FK5XIcVE45LM9BH+Yp+XFtIUUtuxGglQTJ6YMkjAtZOVNW8yYhk7YVcb2MvsSjKbIwa13TKsaYexBWM7a0iyhn2Q3Xi3jXpxL4pylUgiWb7af2XABJw0FOyWsWryEPNGYLWbO0E1s1zl+STA32Bz+fgUL1IrVBxUPFQ58r4pVF5id5r8Bo7YNvsEbLe2LLsbWDxy+W7xTXIo9GVweL1Kau8IvCP8B4OSvBcp2rT8VFy+X5OY1uWtF7nouHyu1BR903Ou4f3itrWelrefLXzwmq22Di++UWo888N3zLc2stoYXL9z6WanjJ7SLlzqCax2RlY7IY/Evvj/7VjvOO7P+po9vfHRjqfmPbZ+3fe0//mX/n4YeDn11jla55UDXUnJVPr4m967IvY+b/y4P/Hfdf2DN373i72alMMYxqaZzT9CTseXA8Jo8siKPfLfub1rzd674O5lI1MHp+0buZ0Uy+to8RL/5tzFfLACeBZouHBSeHfXFTgvPTgfp+G/tHG3jITe7NOooixMJuy6RyBpKXmNjOZH4MI+08gphNynHj+Ug97OGcZtTDZyAEKnaOOWGBfom2OQ5qWHT5ZGGNpsFyf+yzidFyypMkO7NGyY5zt6PsYbds2wxSY+xU8vKkDu3sT1nyya+RQZB+ZrtfCb9Yo57AbwvQP0L4H8BfP8ELa/EIBfdBLRx9P8HkLKyoQ=='))))
+import os
+import json
+import requests
+import hashlib
+
+from core import utils
+
+class Memec:
+    def __init__(self):
+        pass
+
+    def EliteHashChek(self, jalur):
+        hasher = hashlib.sha256()
+        try:
+            with open(jalur, 'rb') as f:
+                while chunk := f.read(8192):
+                    hasher.update(chunk)
+            return hasher.hexdigest()
+        except FileNotFoundError:
+            exit(f"[ERROR] File {jalur} tidak ditemukan.")
+    
+    def Logger(self):
+        utils.clear()
+        print('Wah, keliatan ada yang suka oprek nih! Tapi sayangnya, file ini gak boleh diubah. Silakan buat versi sendiri ya!')
+        exit()
+
+    def EliteHashVerifier(self):pass
