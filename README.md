@@ -33,11 +33,10 @@
 - 🎨 Modern and sleek UI.
 - 📚 Step-by-step installation guide for beginners.
 - 🔑 Enhanced login methods:
-  - API Instagram event SmartLock Google
-  - API Instagram event manual
-  - API Threads event manual
+  - API threads
+  - API Instagram
 - 🌐 Dual language support: English & Indonesia.
-- 🗓 Last updated: 21/03/2025
+- 🗓 Last updated: 18/04/2025
 
 ---
 
