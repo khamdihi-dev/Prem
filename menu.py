@@ -293,6 +293,8 @@ class menu:
             self.pointku = f'{H}Claim Licensi 1 minggu{RS}'
         else:
             self.pointku = f'Kumpulkan {R}{5-self.pointku}{RS} point lagi'
+        open('data/.verifier.txt','w').write('ya')
+
         print(f'''
  All About you
 
