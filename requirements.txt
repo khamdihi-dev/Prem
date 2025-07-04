@@ -1,8 +1,7 @@
-pytz
+bs4
 httpx
-httpx[http2]
+httpx[h2]
 requests
 questionary
-dotenv
 rich
-email_validator
+pycryptodome
