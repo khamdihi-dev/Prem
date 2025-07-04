@@ -3,7 +3,7 @@
 </div>
 
 <h1 align="center" style="font-family: 'Roboto', sans-serif; font-size: 3em; color: #1E88E5; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-    <b>Instagram Bruteforce 2025</b>
+     <b><sub>👾</sub> Instagram Bruteforce 2025 <sub>👾</sub></b>
 </h1>
 
 <div align="center">
@@ -33,10 +33,10 @@
 - 🎨 Modern and sleek UI.
 - 📚 Step-by-step installation guide for beginners.
 - 🔑 Enhanced login methods:
-  - API threads
-  - API Instagram
+  - Apk threads -> api : google smartlock, event_manual, device_based_login
+  - Apk Instagram -> google smartlock, event_manual
 - 🌐 Dual language support: English & Indonesia.
-- 🗓 Last updated: 18/04/2025
+- 🗓 Last updated: 4/07/2025
 
 ---
 
@@ -45,11 +45,10 @@
 pkg update && upgrade
 termux-change-repo # Enter 2x
 pkg install git python -y
-pip3.12 install -r requirements.txt
 git clone https://github.com/khamdihi-dev/Prem
 cd Prem
-python3.12 run.py  # Crack
-python3.12 run.py 2fa # Direct login to 2FA menu
+pip3.12 install -r requirements.txt
+python3.12 run.py
 ```
 
 ---
@@ -57,8 +56,7 @@ python3.12 run.py 2fa # Direct login to 2FA menu
 ## 🛠️ If Already Installed
 ```sh
 cd $HOME/Prem
-python3.12 run.py  # Crack
-python3.12 run.py 2fa # Direct login to 2FA menu
+python3.12 run.py
 ```
 
 ---
