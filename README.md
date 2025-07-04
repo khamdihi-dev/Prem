@@ -62,7 +62,7 @@ python3.12 run.py
 ---
 
 ## 📸 Display
-![Logo](image/elite3.png)
+![Logo](image/{2291754A-9F8E-4074-A9EC-A7E994B48A2E}.png)
 
 ---
 
