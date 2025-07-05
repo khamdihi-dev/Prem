@@ -1,8 +1,7 @@
 bs4
 httpx
-httpx[h2]
+httpx[http2]
 requests
 questionary
 rich
-pycryptodome
 pycryptodomex
